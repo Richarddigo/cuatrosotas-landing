@@ -25,6 +25,11 @@ export const navTranslations = {
     terms: { es: 'Términos', en: 'Terms', de: 'Nutzungsbedingungen', fr: 'Conditions' },
     langAriaLabel: { es: 'Idioma seleccionado: Español. Pulsa para cambiar.', en: 'Selected language: English. Click to change.', de: 'Ausgewählte Sprache: Deutsch. Zum Ändern klicken.', fr: 'Langue sélectionnée : Français. Cliquez pour changer.' },
     langLabel: { es: '🇪🇸 ES', en: '🇬🇧 EN', de: '🇩🇪 DE', fr: '🇫🇷 FR' },
+    brandHomeAria: { es: 'Cuatro Sotas — Inicio', en: 'Cuatro Sotas — Home', de: 'Cuatro Sotas — Start', fr: 'Cuatro Sotas — Accueil' },
+    mainNavAria: { es: 'Navegación principal', en: 'Main navigation', de: 'Hauptnavigation', fr: 'Navigation principale' },
+    mainMenuAria: { es: 'Menú principal', en: 'Main menu', de: 'Hauptmenü', fr: 'Menu principal' },
+    openMenu: { es: 'Abrir menú', en: 'Open menu', de: 'Menü öffnen', fr: 'Ouvrir le menu' },
+    closeMenu: { es: 'Cerrar menú', en: 'Close menu', de: 'Menü schließen', fr: 'Fermer le menu' },
 };
 
 // ─── Footer ──────────────────────────────────────────────────────────────────

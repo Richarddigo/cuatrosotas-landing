@@ -1,10 +1,10 @@
-/* =====================================================================
-   Cuatro Sotas — Shared Stylesheet
+﻿/* =====================================================================
+   Cuatro Sotas â€” Shared Stylesheet
    Mobile-first. Breakpoints: 480px / 768px / 1024px
-   Fonts: Merriweather (headings) · Open Sans (body) — Brand Guidelines
+   Fonts: Inter (all weights) — Aligned with Cojauny Studio
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* -------------------------------------------------------
@@ -13,7 +13,7 @@
    Product colours (green, gold, red) remain Cuatro Sotas brand.
    ------------------------------------------------------- */
 :root {
-  /* ── Cuatro Sotas brand palette ── */
+  /* â”€â”€ Cuatro Sotas brand palette â”€â”€ */
   --green: #1A472A;
   /* hero / filled sections */
   --green-dark: #0D2818;
@@ -23,12 +23,12 @@
   --red: #EF4444;
   --blue: #1E3A5F;
 
-  /* ── Dark theme (Studio branding) ── */
+  /* â”€â”€ Dark theme (Studio branding) â”€â”€ */
   --bg: #0C1120;
   --surface: #1C2336;
   --surface-2: #232E48;
   --cream: #0C1120;
-  /* body background — now dark */
+  /* body background â€” now dark */
   --white: #FFFFFF;
   /* kept for hero/filled-section text */
   --card-bg: #1C2336;
@@ -36,20 +36,20 @@
   --bg-light: #161E32;
   /* alternate section background */
 
-  /* ── Accent: vibrant green readable on dark bg ── */
+  /* â”€â”€ Accent: vibrant green readable on dark bg â”€â”€ */
   --accent: #22C55E;
   --accent-dim: #16A34A;
   --accent-glow: rgba(34, 197, 94, 0.18);
 
-  /* ── Text ── */
+  /* â”€â”€ Text â”€â”€ */
   --text: #F1F5F9;
   --text-muted: #94A3B8;
 
-  /* ── Borders ── */
+  /* â”€â”€ Borders â”€â”€ */
   --border: rgba(255, 255, 255, 0.08);
   --border-light: rgba(255, 255, 255, 0.12);
 
-  /* ── Structure ── */
+  /* â”€â”€ Structure â”€â”€ */
   --radius-sm: 6px;
   --radius: 12px;
   --radius-lg: 20px;
@@ -78,7 +78,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -136,7 +136,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Merriweather', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.25;
   color: var(--text);
 }
@@ -277,7 +277,7 @@ header {
 }
 
 .cs-brand-name {
-  font-family: 'Merriweather', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: var(--text);
@@ -444,7 +444,7 @@ header {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
   white-space: nowrap;
 }
@@ -508,7 +508,7 @@ header {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   text-align: left;
   transition: background-color var(--transition), color var(--transition);
 }
@@ -621,7 +621,7 @@ header {
 .hero .tagline {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   color: var(--gold);
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   margin-bottom: 1rem;
 }
 
@@ -784,7 +784,7 @@ header {
 }
 
 /* -------------------------------------------------------
-   How to play — steps
+   How to play â€” steps
    ------------------------------------------------------- */
 .steps-grid {
   display: grid;
@@ -815,7 +815,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: .95rem;
 }
@@ -847,7 +847,7 @@ th {
   color: var(--white);
   padding: .7rem 1rem;
   text-align: left;
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: .85rem;
 }
 
@@ -944,7 +944,7 @@ tr:last-child td {
 }
 
 .tier-name {
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 900;
   font-size: 1.2rem;
   color: var(--text);
@@ -1271,7 +1271,7 @@ tr:last-child td {
   font-size: clamp(5rem, 20vw, 8rem);
   font-weight: 900;
   color: var(--accent);
-  font-family: 'Merriweather', serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1;
 }
 
@@ -1311,7 +1311,7 @@ footer a {
 }
 
 /* -------------------------------------------------------
-   Responsive — 480px+
+   Responsive â€” 480px+
    ------------------------------------------------------- */
 @media (min-width: 480px) {
   .suits-grid {
@@ -1324,7 +1324,7 @@ footer a {
 }
 
 /* -------------------------------------------------------
-   Responsive — 640px+
+   Responsive â€” 640px+
    ------------------------------------------------------- */
 @media (min-width: 640px) {
   .modes-grid {
@@ -1337,7 +1337,7 @@ footer a {
 }
 
 /* -------------------------------------------------------
-   Responsive — 768px+
+   Responsive â€” 768px+
    ------------------------------------------------------- */
 @media (min-width: 768px) {
   .section {
@@ -1358,7 +1358,7 @@ footer a {
 }
 
 /* -------------------------------------------------------
-   Responsive — 1024px+
+   Responsive â€” 1024px+
    ------------------------------------------------------- */
 @media (min-width: 1024px) {
   :root {

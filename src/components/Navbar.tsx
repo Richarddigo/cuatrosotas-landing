@@ -48,7 +48,7 @@ export default function Navbar() {
         >
             <div className="cs-nav-inner">
                 {/* Brand */}
-                <Link href="/" className="cs-brand" aria-label="Cuatro Sotas — Inicio">
+                <Link href="/" className="cs-brand" aria-label={t(navTranslations.brandHomeAria, lang)}>
                     <Image
                         src="/logo.png"
                         alt=""
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {/* Desktop navigation */}
                 <nav
                     className="cs-nav-links"
-                    aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}
+                    aria-label={t(navTranslations.mainNavAria, lang)}
                 >
                     {NAV_LINKS.map(({ href, key }) => (
                         <Link
@@ -90,11 +90,7 @@ export default function Navbar() {
                         onClick={() => setMobileOpen((v) => !v)}
                         aria-expanded={mobileOpen}
                         aria-controls="cs-mobile-menu"
-                        aria-label={
-                            mobileOpen
-                                ? lang === 'es' ? 'Cerrar menú' : 'Close menu'
-                                : lang === 'es' ? 'Abrir menú' : 'Open menu'
-                        }
+                        aria-label={mobileOpen ? t(navTranslations.closeMenu, lang) : t(navTranslations.openMenu, lang)}
                     >
                         <span className={`cs-hb-line${mobileOpen ? ' open' : ''}`} />
                         <span className={`cs-hb-line${mobileOpen ? ' open' : ''}`} />
@@ -109,7 +105,7 @@ export default function Navbar() {
                 className={`cs-mobile-menu${mobileOpen ? ' cs-mobile-menu--open' : ''}`}
                 aria-hidden={!mobileOpen}
             >
-                <nav aria-label={lang === 'es' ? 'Menú principal' : 'Main menu'}>
+                <nav aria-label={t(navTranslations.mainMenuAria, lang)}>
                     {NAV_LINKS.map(({ href, key }) => (
                         <Link
                             key={href}

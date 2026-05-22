@@ -7,14 +7,11 @@ export type Lang = 'es' | 'en' | 'de' | 'fr';
 interface LanguageContextType {
     lang: Lang;
     setLang: (lang: Lang) => void;
-    /** @deprecated use setLang instead */
-    toggleLang: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
     lang: 'es',
     setLang: () => { },
-    toggleLang: () => { },
 });
 
 const SUPPORTED_LANGS: Lang[] = ['es', 'en', 'de', 'fr'];
@@ -42,14 +39,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         localStorage.setItem('cs_lang', next);
     };
 
-    // Backward-compatible toggle (cycles through all supported languages)
-    const toggleLang = () => {
-        const idx = SUPPORTED_LANGS.indexOf(lang);
-        setLang(SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.length]);
-    };
-
     return (
-        <LanguageContext.Provider value={{ lang, setLang, toggleLang }}>
+        <LanguageContext.Provider value={{ lang, setLang }}>
             {children}
         </LanguageContext.Provider>
     );

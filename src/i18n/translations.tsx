@@ -31,6 +31,11 @@ export const navTranslations = {
 export const footerTranslations = {
     rights: { es: '© 2026 Cojauny. Todos los derechos reservados.', en: '© 2026 Cojauny. All rights reserved.', de: '© 2026 Cojauny. Alle Rechte vorbehalten.', fr: '© 2026 Cojauny. Tous droits réservés.' },
     madeWith: { es: 'Desarrollado con ❤️ en España', en: 'Made with ❤️ in Spain', de: 'Mit ❤️ in Spanien entwickelt', fr: 'Développé avec ❤️ en Espagne' },
+    tagline: { es: 'El auténtico juego de cartas español', en: 'The authentic Spanish card game', de: 'Das authentische spanische Kartenspiel', fr: 'Le jeu de cartes espagnol authentique' },
+    navigate: { es: 'Navegar', en: 'Navigate', de: 'Navigation', fr: 'Navigation' },
+    legal: { es: 'Legal', en: 'Legal', de: 'Rechtliches', fr: 'Légal' },
+    connect: { es: 'Ecosistema', en: 'Ecosystem', de: 'Ökosystem', fr: 'Écosystème' },
+    ecosystemDesc: { es: 'Cuatro Sotas forma parte del ecosistema Cojauny.', en: 'Cuatro Sotas is part of the Cojauny ecosystem.', de: 'Cuatro Sotas ist Teil des Cojauny-Ökosystems.', fr: 'Cuatro Sotas fait partie de l\'écosystème Cojauny.' },
 };
 
 // ─── Home page ───────────────────────────────────────────────────────────────

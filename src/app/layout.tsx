@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LangSync from '@/components/LangSync';
 
+const BASE_URL = 'https://cuatrosotas.cojauny.com';
+
 export const metadata: Metadata = {
   title: {
     template: '%s — Cuatro Sotas',
@@ -18,8 +20,18 @@ export const metadata: Metadata = {
     description:
       'Guiñote español para móvil: vs IA, multijugador local y online, ranking global y suscripción Premium.',
     type: 'website',
-    url: 'https://cuatrosotas.cojauny.com/',
-    images: [{ url: 'https://cuatrosotas.cojauny.com/logo.png' }],
+    url: `${BASE_URL}/`,
+    images: [{ url: `${BASE_URL}/logo.png` }],
+  },
+  alternates: {
+    canonical: `${BASE_URL}/`,
+    languages: {
+      'es': `${BASE_URL}/`,
+      'en': `${BASE_URL}/`,
+      'de': `${BASE_URL}/`,
+      'fr': `${BASE_URL}/`,
+      'x-default': `${BASE_URL}/`,
+    },
   },
 };
 
@@ -27,11 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          crossOrigin="anonymous"
-        />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body>

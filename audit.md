@@ -1,19 +1,28 @@
 # cuatrosotas-landing — Technical Audit
 
 > **Stack:** Next.js 16.2.6 · Tailwind v4 · Custom i18n (es/en/de/fr) · No backend
-> **Output:** `output: 'export'` (static) — suitable for Vercel Hobby / Firebase Hosting / GitHub Pages
+> **Hosting:** Vercel (SSG)
+> **Live:** https://cuatrosotas-landing.vercel.app
 > **Health Score: 95 / 100**
 
 ---
 
 ## 📋 Pending Tasks
 
-- [ ] **Translate legal body content (Privacy, Terms, FAQ)** to German and French — currently only es/en. Requires professional translator to avoid liability (do not machine-translate legal clauses).
-- [ ] **Replace Font Awesome CDN** with a self-hosted solution (e.g. `@fortawesome/react-fontawesome` or replace the two icons in `page.tsx` with inline SVGs) to eliminate the external CDN dependency and improve CSP.
-- [ ] **Verify `toggleLang` is unused** — `LanguageContext` still exports `toggleLang` (cycles all 4 langs). If no component uses it, remove it to reduce dead exports.
-- [ ] **Add `hreflang` meta tags** to the static export so search engines understand the 4-language structure. Since there is no server-side routing, add them manually in `layout.tsx` or via a sitemap.
-- [ ] **Submit to Google Search Console** once deployed: add property for `cuatrosotas.cojauny.com` and submit the sitemap (if one is added).
-- [ ] **Run Lighthouse** on deployed site — target Performance ≥ 90 · Accessibility ≥ 95 · SEO = 100.
+- [x] **Deploy to Vercel** — first deploy done at https://cuatrosotas-landing.vercel.app ✅
+- [x] **Remove `output: 'export'`** — runs as native Next.js SSG on Vercel; image optimization enabled ✅
+- [ ] **Create GitHub repo and link to Vercel** — run these two commands (requires `gh auth login` first):
+  ```bash
+  gh auth login
+  gh repo create Richarddigo/cuatrosotas-landing --public --source=. --push
+  ```
+  Then: [Vercel → cuatrosotas-landing → Settings → Git](https://vercel.com/richarddigo-projects/cuatrosotas-landing/settings/git) → Connect GitHub repo. After that, every push auto-deploys.
+- [ ] **Translate legal content (Privacy, Terms, FAQ)** to German and French — requires professional translator.
+- [ ] **Replace Font Awesome CDN** with self-hosted icons or inline SVGs.
+- [ ] **Verify `toggleLang` is unused** — if so, remove it from `LanguageContext.tsx`.
+- [ ] **Add `hreflang` meta tags** in `layout.tsx` for the 4 language variants.
+- [ ] **Submit to Google Search Console** — add property for the final domain and submit sitemap.
+- [ ] **Run Lighthouse** — target Performance ≥ 90 · Accessibility ≥ 95 · SEO = 100.
 
 ---
 

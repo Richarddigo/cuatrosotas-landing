@@ -3,77 +3,125 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useLanguage, type Lang } from '@/context/LanguageContext';
+import { useState, useEffect } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import { t, navTranslations } from '@/i18n/translations';
+import LanguageSwitcher from './LanguageSwitcher';
 
-const LANGS: { code: Lang; flag: string; short: string }[] = [
-    { code: 'es', flag: '🇪🇸', short: 'ES' },
-    { code: 'en', flag: '🇬🇧', short: 'EN' },
-    { code: 'de', flag: '🇩🇪', short: 'DE' },
-    { code: 'fr', flag: '🇫🇷', short: 'FR' },
-];
+const NAV_LINKS = [
+    { href: '/', key: 'home' },
+    { href: '/support', key: 'support' },
+    { href: '/privacy', key: 'privacy' },
+    { href: '/terms', key: 'terms' },
+] as const;
 
 export default function Navbar() {
     const pathname = usePathname();
-    const { lang, setLang } = useLanguage();
+    const { lang } = useLanguage();
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
-    const navLinks = [
-        { href: '/', label: t(navTranslations.home, lang) },
-        { href: '/support', label: t(navTranslations.support, lang) },
-        { href: '/privacy', label: t(navTranslations.privacy, lang) },
-        { href: '/terms', label: t(navTranslations.terms, lang) },
-    ];
+    useEffect(() => {
+        const handler = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handler, { passive: true });
+        handler();
+        return () => window.removeEventListener('scroll', handler);
+    }, []);
+
+    // Close mobile menu on route change
+    useEffect(() => setMobileOpen(false), [pathname]);
+
+    const labels: Record<string, string> = {
+        home: t(navTranslations.home, lang),
+        support: t(navTranslations.support, lang),
+        privacy: t(navTranslations.privacy, lang),
+        terms: t(navTranslations.terms, lang),
+    };
 
     const isActive = (href: string) =>
         href === '/' ? pathname === '/' : pathname.startsWith(href);
 
     return (
-        <nav aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
-            <div className="nav-container">
-                <div className="nav-left">
+        <header
+            className={`cs-header${scrolled ? ' cs-header--scrolled' : ''}`}
+            role="banner"
+        >
+            <div className="cs-nav-inner">
+                {/* Brand */}
+                <Link href="/" className="cs-brand" aria-label="Cuatro Sotas — Inicio">
                     <Image
                         src="/logo.png"
-                        alt="Cuatro Sotas"
-                        className="logo"
-                        width={48}
-                        height={48}
+                        alt=""
+                        width={40}
+                        height={40}
+                        className="cs-brand-logo"
                     />
-                    <div className="header-text">
-                        <h1>{t(navTranslations.siteTitle, lang)}</h1>
-                        <p>{t(navTranslations.siteTagline, lang)}</p>
-                    </div>
-                </div>
+                    <span className="cs-brand-text">
+                        <span className="cs-brand-name">{t(navTranslations.siteTitle, lang)}</span>
+                        <span className="cs-brand-tagline">{t(navTranslations.siteTagline, lang)}</span>
+                    </span>
+                </Link>
 
-                <div className="nav-center">
-                    {navLinks.map(link => (
+                {/* Desktop navigation */}
+                <nav
+                    className="cs-nav-links"
+                    aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}
+                >
+                    {NAV_LINKS.map(({ href, key }) => (
                         <Link
-                            key={link.href}
-                            href={link.href}
-                            {...(isActive(link.href) ? { 'aria-current': 'page' as const } : {})}
+                            key={href}
+                            href={href}
+                            className={`cs-nav-link${isActive(href) ? ' cs-nav-link--active' : ''}`}
+                            {...(isActive(href) ? { 'aria-current': 'page' as const } : {})}
                         >
-                            {link.label}
+                            {labels[key]}
                         </Link>
                     ))}
-                </div>
+                </nav>
 
-                <div className="nav-right">
-                    <div className="lang-switcher" role="group" aria-label={lang === 'es' ? 'Seleccionar idioma' : 'Select language'}>
-                        {LANGS.map(({ code, flag, short }) => (
-                            <button
-                                key={code}
-                                onClick={() => setLang(code)}
-                                aria-pressed={lang === code}
-                                className={lang === code ? 'lang-btn active' : 'lang-btn'}
-                                aria-label={`${flag} ${short}`}
-                                title={code.toUpperCase()}
-                            >
-                                <span aria-hidden="true">{flag}</span>
-                                <span className="lang-code">{short}</span>
-                            </button>
-                        ))}
-                    </div>
+                {/* Actions */}
+                <div className="cs-nav-actions">
+                    <LanguageSwitcher />
+
+                    {/* Hamburger (mobile only) */}
+                    <button
+                        type="button"
+                        className="cs-hamburger"
+                        onClick={() => setMobileOpen((v) => !v)}
+                        aria-expanded={mobileOpen}
+                        aria-controls="cs-mobile-menu"
+                        aria-label={
+                            mobileOpen
+                                ? lang === 'es' ? 'Cerrar menú' : 'Close menu'
+                                : lang === 'es' ? 'Abrir menú' : 'Open menu'
+                        }
+                    >
+                        <span className={`cs-hb-line${mobileOpen ? ' open' : ''}`} />
+                        <span className={`cs-hb-line${mobileOpen ? ' open' : ''}`} />
+                        <span className={`cs-hb-line${mobileOpen ? ' open' : ''}`} />
+                    </button>
                 </div>
             </div>
-        </nav>
+
+            {/* Mobile menu */}
+            <div
+                id="cs-mobile-menu"
+                className={`cs-mobile-menu${mobileOpen ? ' cs-mobile-menu--open' : ''}`}
+                aria-hidden={!mobileOpen}
+            >
+                <nav aria-label={lang === 'es' ? 'Menú principal' : 'Main menu'}>
+                    {NAV_LINKS.map(({ href, key }) => (
+                        <Link
+                            key={href}
+                            href={href}
+                            className={`cs-mobile-link${isActive(href) ? ' cs-mobile-link--active' : ''}`}
+                            onClick={() => setMobileOpen(false)}
+                        >
+                            {labels[key]}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
+        </header>
     );
 }

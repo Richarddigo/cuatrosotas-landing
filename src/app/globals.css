@@ -4,7 +4,6 @@
    Fonts: Inter (all weights) — Aligned with Cojauny Studio
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* -------------------------------------------------------
@@ -26,7 +25,7 @@
   /* â”€â”€ Dark theme (Studio branding) â”€â”€ */
   --bg: #0C1120;
   --surface: #1C2336;
-  --surface-2: #232E48;
+  --surface-2: #2A3550;
   --cream: #0C1120;
   /* body background â€” now dark */
   --white: #FFFFFF;
@@ -37,9 +36,9 @@
   /* alternate section background */
 
   /* â”€â”€ Accent: vibrant green readable on dark bg â”€â”€ */
-  --accent: #22C55E;
-  --accent-dim: #16A34A;
-  --accent-glow: rgba(34, 197, 94, 0.18);
+  --accent: #5B7BFF;
+  --accent-dim: #3A59D9;
+  --accent-glow: rgba(91, 123, 255, 0.18);
 
   /* â”€â”€ Text â”€â”€ */
   --text: #F1F5F9;
@@ -62,15 +61,179 @@
   --max-width: 900px;
 }
 
+/* ─── Tailwind v4 Theme Registration (aligned with cojauny-studio) ──── */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-bg: #0C1120;
+  --color-surface: #1C2336;
+  --color-surface-2: #2A3550;
+  --color-accent: #5B7BFF;
+  --color-accent-dim: #3A59D9;
+  --color-text: #F1F5F9;
+  --color-muted: #94A3B8;
+  --shadow-soft-glow: 0 20px 60px rgba(90, 103, 242, 0.25);
+}
+
+/* ─── Studio utility classes ─────────────────────────────────────────── */
+/* container-studio: shared max-width wrapper matching cojauny-studio */
+.container-studio {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* section-padding: standard vertical rhythm */
+.section-padding {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+/* focus-ring: accessible focus indicator matching studio */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Header/navbar spacing utilities (scoped for ecosystem nav parity) */
+.eco-header-shell {
+  min-height: 68px;
+  padding-block: 1rem;
+}
+
+.eco-header-container {
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.eco-logo-link {
+  margin: -0.375rem;
+  padding: 0.375rem;
+}
+
+.eco-icon-btn {
+  padding: 0.5rem;
+  border-radius: 9999px;
+}
+
+.eco-icon-btn.focus-ring:focus-visible {
+  border-radius: 9999px;
+}
+
+.eco-nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+.eco-nav-link:hover {
+  color: #fff;
+}
+
+.eco-mobile-panel {
+  padding-block: 1.5rem;
+  padding-inline: 1rem;
+}
+
+.eco-mobile-links {
+  margin-top: 1.5rem;
+  padding-inline-end: 1.5rem;
+}
+
+.eco-mobile-link {
+  padding: 0.875rem 1rem;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.eco-mobile-link:hover,
+.eco-mobile-link:active {
+  color: #fff;
+}
+
+.eco-mobile-lang {
+  gap: 1rem;
+  padding-block: 1.5rem;
+  padding-inline-end: 1.5rem;
+}
+
+.eco-lang-btn {
+  padding: 0.5rem 0.75rem;
+}
+
+.eco-lang-item {
+  padding: 0.5rem 0.75rem;
+}
+
+.eco-lang-drop-down {
+  margin-top: 0.5rem;
+}
+
+.eco-lang-drop-up {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .eco-mobile-panel {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .eco-header-shell {
+    min-height: 70px;
+  }
+}
+
+/* gradient-text: accent gradient used in 404/headings */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* reveal-in / reveal-init: scroll-driven animation (matches AnimateIn) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-in {
+  animation: reveal 0.5s var(--ease) forwards;
+}
+
 /* -------------------------------------------------------
    Reset & base
    ------------------------------------------------------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html {
@@ -78,13 +241,41 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
   font-size: 1rem;
-  padding-top: 70px;
-  /* offset for fixed header */
+  padding-top: 68px;
+  /* offset for fixed header — matches mobile nav height */
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  /* hard guard against accidental horizontal overflow on mobile */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 70px;
+    /* desktop nav height */
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2A3550 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A3550;
+  border-radius: 999px;
 }
 
 img {
@@ -136,7 +327,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1.25;
   color: var(--text);
 }
@@ -157,6 +348,9 @@ h3 {
 
 p {
   margin-bottom: 1rem;
+}
+
+p:not([class*="text-"]) {
   color: var(--text-muted);
 }
 
@@ -178,16 +372,16 @@ strong {
 }
 
 /* -------------------------------------------------------
-   Header
+   Legacy static header (scoped to avoid overriding navbar)
    ------------------------------------------------------- */
-header {
+.legacy-header {
   background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
   color: var(--white);
   padding: 1.5rem 2rem;
   text-align: center;
 }
 
-.header-inner {
+.legacy-header .header-inner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,7 +390,7 @@ header {
   margin: 0 auto;
 }
 
-.logo {
+.legacy-header .logo {
   width: 56px;
   height: 56px;
   border-radius: 14px;
@@ -205,12 +399,12 @@ header {
   flex-shrink: 0;
 }
 
-.header-text h1 {
+.legacy-header .header-text h1 {
   color: var(--white);
   font-size: clamp(1.4rem, 4vw, 2rem);
 }
 
-.header-text p {
+.legacy-header .header-text p {
   color: rgba(255, 255, 255, .80);
   font-size: .95rem;
   margin: 0;
@@ -242,11 +436,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 64px;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 2rem);
-  gap: 1rem;
+  padding: 0 clamp(0.75rem, 4vw, 2rem);
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cs-nav-inner {
+    height: 70px;
+    gap: 1rem;
+  }
 }
 
 /* Brand */
@@ -259,11 +460,18 @@ header {
 }
 
 .cs-brand-logo {
-  width: 40px !important;
-  height: 40px !important;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   transition: box-shadow var(--transition);
+}
+
+@media (min-width: 768px) {
+  .cs-brand-logo {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .cs-brand:hover .cs-brand-logo {
@@ -277,7 +485,7 @@ header {
 }
 
 .cs-brand-name {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: var(--text);
@@ -382,6 +590,25 @@ header {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 1px;
   transition: transform 280ms var(--ease), opacity 200ms;
+  transform-origin: center;
+}
+
+.cs-hb-line.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.cs-hb-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.cs-hb-line.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-hb-line {
+    transition: none;
+  }
 }
 
 /* Mobile menu */
@@ -421,7 +648,7 @@ header {
 
 .cs-mobile-link--active {
   color: var(--accent);
-  background-color: rgba(34, 197, 94, 0.09);
+  background-color: rgba(91, 123, 255, 0.09);
 }
 
 /* -------------------------------------------------------
@@ -444,7 +671,7 @@ header {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition);
   white-space: nowrap;
 }
@@ -495,6 +722,11 @@ header {
   -webkit-backdrop-filter: blur(20px);
 }
 
+.cs-lang-menu--up {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+
 .cs-lang-option {
   display: flex;
   align-items: center;
@@ -508,7 +740,7 @@ header {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   text-align: left;
   transition: background-color var(--transition), color var(--transition);
 }
@@ -519,7 +751,7 @@ header {
 }
 
 .cs-lang-option--active {
-  background-color: rgba(34, 197, 94, 0.12);
+  background-color: rgba(91, 123, 255, 0.12);
   color: var(--text);
 }
 
@@ -621,7 +853,7 @@ header {
 .hero .tagline {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   color: var(--gold);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   margin-bottom: 1rem;
 }
 
@@ -703,12 +935,12 @@ header {
 }
 
 /* -------------------------------------------------------
-   Suits grid
+   Suits grid (mobile-first: 2 cols, then 4)
    ------------------------------------------------------- */
 .suits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: .75rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
   margin: 1.5rem 0;
 }
 
@@ -809,13 +1041,13 @@ header {
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  background: var(--green);
+  background: var(--accent);
   color: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   font-size: .95rem;
 }
@@ -830,10 +1062,20 @@ header {
 }
 
 /* -------------------------------------------------------
-   Card values table
+   Card values table — wrap in .table-scroll for horizontal
+   scroll on narrow viewports.
    ------------------------------------------------------- */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.25rem 0;
+  border-radius: var(--radius-sm);
+}
+
 table {
   width: 100%;
+  min-width: 320px;
   border-collapse: collapse;
   margin: 1.25rem 0;
   font-size: .9rem;
@@ -842,12 +1084,16 @@ table {
   overflow: hidden;
 }
 
+.table-scroll>table {
+  margin: 0;
+}
+
 th {
   background: var(--green);
   color: var(--white);
   padding: .7rem 1rem;
   text-align: left;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   font-size: .85rem;
 }
 
@@ -944,7 +1190,7 @@ tr:last-child td {
 }
 
 .tier-name {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   font-weight: 900;
   font-size: 1.2rem;
   color: var(--text);
@@ -973,8 +1219,14 @@ tr:last-child td {
    ------------------------------------------------------- */
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .links-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 }
 
 .link-card {
@@ -1039,9 +1291,15 @@ tr:last-child td {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin: 1rem 0;
+}
+
+@media (min-width: 480px) {
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
 }
 
 .contact-item {
@@ -1068,10 +1326,13 @@ tr:last-child td {
 }
 
 /* -------------------------------------------------------
-   Buttons & CTAs
+   Buttons & CTAs — touch targets ≥ 44px (WCAG 2.5.5)
    ------------------------------------------------------- */
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   background: var(--green);
   color: var(--white);
   padding: .75rem 1.5rem;
@@ -1234,7 +1495,7 @@ tr:last-child td {
 }
 
 .success {
-  background: rgba(34, 197, 94, 0.09);
+  background: rgba(91, 123, 255, 0.09);
   padding: 1rem 1.25rem;
   border-radius: var(--radius-sm);
   border-left: 4px solid var(--accent);
@@ -1271,7 +1532,7 @@ tr:last-child td {
   font-size: clamp(5rem, 20vw, 8rem);
   font-weight: 900;
   color: var(--accent);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   line-height: 1;
 }
 
@@ -1288,7 +1549,7 @@ tr:last-child td {
 /* -------------------------------------------------------
    Footer
    ------------------------------------------------------- */
-footer {
+.legacy-footer {
   background: var(--green-dark);
   color: var(--white);
   text-align: center;
@@ -1296,18 +1557,64 @@ footer {
   margin-top: 0;
 }
 
-footer p {
+.legacy-footer p {
   color: rgba(255, 255, 255, .8);
   font-size: .875rem;
 }
 
-footer p+p {
+.legacy-footer p+p {
   margin-top: .4rem;
   opacity: .7;
 }
 
-footer a {
+.legacy-footer a {
   color: var(--gold);
+}
+
+/* -------------------------------------------------------
+   Unified footer normalization (match cojauny/studio)
+   ------------------------------------------------------- */
+footer {
+  background: var(--bg);
+  color: var(--text);
+  text-align: left;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+footer>div {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-block: 4rem;
+  padding-inline: 100px;
+}
+
+/* -------------------------------------------------------
+   Mobile micro-adjustments (≤ 360px ultra-small phones)
+   ------------------------------------------------------- */
+@media (max-width: 360px) {
+
+  .mode-card,
+  .tier,
+  .link-card,
+  .faq-item {
+    padding: 1rem;
+  }
+
+  .highlight-box {
+    padding: 1rem 1.1rem;
+  }
+
+  .instant-win {
+    padding: 1rem 1.1rem;
+    gap: 0.75rem;
+  }
+
+  .instant-win .win-icon {
+    font-size: 2rem;
+  }
 }
 
 /* -------------------------------------------------------
@@ -1316,6 +1623,7 @@ footer a {
 @media (min-width: 480px) {
   .suits-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: .75rem;
   }
 
   .steps-grid {
@@ -1413,4 +1721,126 @@ footer a {
     box-shadow: none;
     border: 1px solid #ccc;
   }
+}
+
+/* -------------------------------------------------------
+   Legal layout content (inside LegalLayout component)
+   Cards in /legal/* pages — aligned with cojauny-studio
+   ------------------------------------------------------- */
+.legal-content .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: none;
+}
+
+.legal-content .card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-content .card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-content .card p,
+.legal-content .card li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.legal-content .card a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(91, 123, 255, 0.35);
+}
+
+.legal-content .card a:hover {
+  color: var(--accent-dim);
+}
+
+.legal-content .section {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.legal-content .bg-light {
+  background: transparent;
+}
+
+.legal-content .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* -------------------------------------------------------
+   Legal layout content (inside LegalLayout component)
+   Cards in /legal/* pages — aligned with cojauny-studio
+   ------------------------------------------------------- */
+.legal-content .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: none;
+}
+
+.legal-content .card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-content .card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-content .card p,
+.legal-content .card li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.legal-content .card a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(91, 123, 255, 0.35);
+}
+
+.legal-content .card a:hover {
+  color: var(--accent-dim);
+}
+
+.legal-content .section {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.legal-content .bg-light {
+  background: transparent;
+}
+
+.legal-content .container {
+  max-width: 100%;
+  padding: 0;
 }

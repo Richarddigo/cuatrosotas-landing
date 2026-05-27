@@ -1,118 +1,82 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { useLanguage } from '@/context/LanguageContext';
-import { t, footerTranslations, navTranslations } from '@/i18n/translations';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Footer() {
-    const { lang } = useLanguage();
+    const navT = useTranslations('nav');
+    const footerT = useTranslations('footer');
 
     const navLinks = [
-        { href: '/', label: t(navTranslations.home, lang) },
-        { href: '/support', label: t(navTranslations.support, lang) },
+        { href: '/' as const, label: navT('home') },
+        { href: '/legal/support' as const, label: navT('support') },
     ];
 
     const legalLinks = [
-        { href: '/privacy', label: t(navTranslations.privacy, lang) },
-        { href: '/terms', label: t(navTranslations.terms, lang) },
+        { href: '/legal/privacy' as const, label: navT('privacy') },
+        { href: '/legal/terms' as const, label: navT('terms') },
     ];
 
+    const columnHeading = 'mb-4 text-xs font-semibold uppercase tracking-widest text-accent';
+    const bodyText = 'text-sm leading-relaxed text-muted';
+    const linkBase = 'text-sm !text-muted transition-colors hover:!text-text';
+
     return (
-        <footer style={{ background: 'var(--green-dark)', borderTop: '2px solid var(--gold-dark)', marginTop: 'auto' }}>
-            <div style={{ maxWidth: '1180px', margin: '0 auto', padding: 'clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem)' }}>
-                {/* 3-column grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2.5rem' }}>
+        <footer className="mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
+            <div className="mx-auto max-w-[1180px] px-[100px] py-16">
+                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
 
-                    {/* Col 1: Brand */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                            <Image
-                                src="/icons/icon-192.png"
-                                alt="Cuatro Sotas"
-                                width={36}
-                                height={36}
-                                style={{ borderRadius: '8px' }}
-                            />
-                            <span style={{ color: 'var(--gold)', fontWeight: 700, fontSize: '1rem' }}>
-                                {t(navTranslations.siteTitle, lang)}
-                            </span>
-                        </div>
-                        <p style={{ color: 'rgba(245,245,220,0.7)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '22ch' }}>
-                            {t(footerTranslations.tagline, lang)}
-                        </p>
-                        <p style={{ color: 'rgba(245,245,220,0.5)', fontSize: '0.75rem' }}>
-                            {t(footerTranslations.madeWith, lang)}
-                        </p>
+                    <div className="flex flex-col gap-4">
+                        <Link href="/" className="flex items-center gap-3">
+                            <Image src="/logo.png" alt="Cuatro Sotas" width={28} height={28} className="h-7 w-auto" />
+                            <span className="text-base font-bold text-text">{navT('siteTitle')}</span>
+                        </Link>
+                        <p className={`${bodyText} max-w-[18ch]`}>{footerT('tagline')}</p>
                     </div>
 
-                    {/* Col 2: Navigate */}
                     <div>
-                        <p style={{ color: 'var(--gold)', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>
-                            {t(footerTranslations.navigate, lang)}
-                        </p>
-                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                            {navLinks.map(link => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    style={{ color: 'rgba(245,245,220,0.7)', fontSize: '0.875rem', textDecoration: 'none', transition: 'color 200ms' }}
-                                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-                                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,245,220,0.7)')}
-                                >
+                        <p className={columnHeading}>{footerT('connect')}</p>
+                        <p className={bodyText}>{footerT('ecosystemDesc')}</p>
+                    </div>
+
+                    <div>
+                        <p className={columnHeading}>{footerT('navigate')}</p>
+                        <nav className="flex flex-col gap-2">
+                            {navLinks.map((link) => (
+                                <Link key={link.href} href={link.href} className={linkBase}>
                                     {link.label}
                                 </Link>
                             ))}
                         </nav>
                     </div>
 
-                    {/* Col 3: Legal */}
                     <div>
-                        <p style={{ color: 'var(--gold)', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>
-                            {t(footerTranslations.legal, lang)}
-                        </p>
-                        <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                            {legalLinks.map(link => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    style={{ color: 'rgba(245,245,220,0.7)', fontSize: '0.875rem', textDecoration: 'none', transition: 'color 200ms' }}
-                                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-                                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,245,220,0.7)')}
-                                >
+                        <p className={columnHeading}>{footerT('legal')}</p>
+                        <nav className="flex flex-col gap-2">
+                            {legalLinks.map((link) => (
+                                <Link key={link.href} href={link.href} className={linkBase}>
                                     {link.label}
                                 </Link>
                             ))}
                         </nav>
                     </div>
 
-                    {/* Col 4: Ecosystem */}
                     <div>
-                        <p style={{ color: 'var(--gold)', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>
-                            {t(footerTranslations.connect, lang)}
-                        </p>
-                        <p style={{ color: 'rgba(245,245,220,0.7)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '0.75rem' }}>
-                            {t(footerTranslations.ecosystemDesc, lang)}
-                        </p>
-                        <a
-                            href="https://studio.cojauny.com"
-                            target="_blank"
-                            rel="noreferrer"
-                            style={{ color: 'var(--accent)', fontSize: '0.875rem', textDecoration: 'none' }}
-                        >
-                            studio.cojauny.com ↗
-                        </a>
+                        <p className={columnHeading}>{footerT('language')}</p>
+                        <LanguageSwitcher dropdownDirection="up" />
                     </div>
                 </div>
 
-                {/* Bottom bar */}
-                <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(184,134,11,0.2)', display: 'flex', justifyContent: 'center' }}>
-                    <p style={{ color: 'rgba(245,245,220,0.5)', fontSize: '0.75rem' }}>
-                        {t(footerTranslations.rights, lang)}
-                    </p>
+                <div
+                    className="flex flex-col items-center justify-between gap-3 border-t border-[rgba(255,255,255,0.06)] sm:flex-row"
+                    style={{ marginTop: '3rem', paddingTop: '2rem' }}
+                >
+                    <p className="text-xs text-muted" style={{ marginBottom: 0 }}>{footerT('rights')}</p>
+                    <p className="text-xs text-muted" style={{ marginBottom: 0 }}>{footerT('madeIn')}</p>
                 </div>
             </div>
         </footer>
     );
 }
-

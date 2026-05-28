@@ -214,6 +214,185 @@ const homeTranslations = {
         en: 'Usage conditions and Premium subscription terms',
         de: 'Nutzungsbedingungen und Premium-Abonnementbedingungen',
         fr: "Conditions d'utilisation et termes de l'abonnement Premium"
+    },
+
+    // ── How to Play (Turn Steps) ───────────────────────────────────────────
+    howToPlayTitle: {
+        es: 'Cómo funciona un turno',
+        en: 'How a turn works',
+        de: 'Wie ein Zug funktioniert',
+        fr: 'Comment fonctionne un tour'
+    },
+    howToPlayDesc: {
+        es: 'Cada turno tiene dos fases. La lógica es simple — el equilibrio estratégico no lo es tanto.',
+        en: 'Every turn has two phases. The logic is simple — the strategic balance is not.',
+        de: 'Jeder Zug hat zwei Phasen. Die Logik ist einfach — das strategische Gleichgewicht nicht.',
+        fr: 'Chaque tour a deux phases. La logique est simple — l\'équilibre stratégique ne l\'est pas.'
+    },
+    step1Title: { es: 'Roba una carta', en: 'Draw a card', de: 'Karte ziehen', fr: 'Piochez une carte' },
+    step1Desc: {
+        es: 'Roba del mazo (cara oculta) o del descarte (carta superior visible). Tú decides con qué información juegas.',
+        en: 'Draw from the deck (face-down) or from the discard pile (top card visible). You choose what information you play with.',
+        de: 'Ziehe vom Deck (verdeckt) oder vom Abwurfstapel (oberste Karte sichtbar). Du entscheidest mit welchen Infos du spielst.',
+        fr: 'Piochez du deck (face cachée) ou de la défausse (carte du dessus visible). Vous choisissez avec quelles informations jouer.'
+    },
+    step2Title: { es: 'Intercambia o descarta', en: 'Swap or discard', de: 'Tauschen oder ablegen', fr: 'Échangez ou défaussez' },
+    step2Desc: {
+        es: 'Intercambia la carta robada con una de tu mano para mejorar tu puntuación, o descártala. Siempre terminas con exactamente 4 cartas.',
+        en: 'Swap the drawn card with one in your hand to improve your score, or discard it. You always end with exactly 4 cards.',
+        de: 'Tausche die gezogene Karte gegen eine in deiner Hand oder leg sie ab. Du hast immer genau 4 Karten.',
+        fr: 'Échangez la carte piochée avec une en main ou défaussez-la. Vous finissez toujours avec exactement 4 cartes.'
+    },
+    step3Title: { es: '¿Cantas SOTA?', en: 'Call SOTA?', de: 'SOTA rufen?', fr: 'Appelez SOTA ?' },
+    step3Desc: {
+        es: 'Si crees que tienes menos puntos que tu rival, canta SOTA. Ambos jugadores tienen un turno más, luego se revelan las cartas. El más bajo gana — pero si te equivocas, pierdes la ronda.',
+        en: 'If you think you have fewer points than your opponent, call SOTA. Both players get one more turn, then cards are revealed. Lowest score wins — but if you\'re wrong, you lose the round.',
+        de: 'Wenn du glaubst weniger Punkte zu haben, rufe SOTA. Beide Spieler bekommen einen weiteren Zug, dann werden Karten aufgedeckt. Niedrigster Score gewinnt — liegst du falsch, verlierst du die Runde.',
+        fr: 'Si vous pensez avoir moins de points, appelez SOTA. Les deux joueurs ont un tour de plus, puis les cartes sont révélées. Le score le plus bas gagne — mais si vous avez tort, vous perdez la manche.'
+    },
+
+    // ── AI Opponents ──────────────────────────────────────────────────────
+    aiTitle: {
+        es: 'Un oponente que te desafía de verdad',
+        en: 'An opponent that genuinely challenges you',
+        de: 'Ein Gegner, der dich wirklich herausfordert',
+        fr: 'Un adversaire qui vous défie vraiment'
+    },
+    aiDesc: {
+        es: 'Elige el nivel que encaja con tu ritmo de juego. Desde el modo aprendizaje hasta una IA que recuerda tus cartas.',
+        en: 'Choose the level that fits your pace. From learning mode to an AI that remembers your cards.',
+        de: 'Wähle das Level passend zu deinem Tempo. Vom Lernmodus bis zu einer KI, die deine Karten kennt.',
+        fr: 'Choisissez le niveau qui correspond à votre rythme. Du mode apprentissage à une IA qui mémorise vos cartes.'
+    },
+    aiEasyName: { es: 'Fácil', en: 'Easy', de: 'Einfach', fr: 'Facile' },
+    aiEasyBadge: { es: 'Para aprender', en: 'For learning', de: 'Zum Lernen', fr: 'Pour apprendre' },
+    aiEasyDesc: {
+        es: 'Comete errores a propósito. Llama SOTA tarde y de forma conservadora. Ideal para aprender las reglas sin presión.',
+        en: 'Makes deliberate mistakes. Calls SOTA late and conservatively. Ideal for learning the rules without pressure.',
+        de: 'Macht absichtliche Fehler. Ruft SOTA spät und konservativ. Ideal für druckloses Regellernen.',
+        fr: 'Fait des erreurs délibérées. Appelle SOTA tardivement. Idéal pour apprendre les règles sans pression.'
+    },
+    aiMediumName: { es: 'Intermedio', en: 'Intermediate', de: 'Mittel', fr: 'Intermédiaire' },
+    aiMediumBadge: { es: 'Equilibrado', en: 'Balanced', de: 'Ausgewogen', fr: 'Équilibré' },
+    aiMediumDesc: {
+        es: 'Evalúa el promedio de su mano antes de robar. Ajusta el riesgo cuando el mazo escasea. Un reto real.',
+        en: 'Evaluates hand average before drawing. Adjusts risk as the deck thins. A genuine challenge.',
+        de: 'Bewertet den Handurchschnitt vor dem Ziehen. Passt das Risiko an wenn das Deck dünner wird.',
+        fr: 'Évalue la moyenne de sa main avant de piocher. Ajuste le risque quand le deck s\'épuise. Un vrai défi.'
+    },
+    aiHardName: { es: 'Avanzado', en: 'Advanced', de: 'Fortgeschritten', fr: 'Avancé' },
+    aiHardBadge: { es: 'Para expertos', en: 'For experts', de: 'Für Experten', fr: 'Pour les experts' },
+    aiHardDesc: {
+        es: 'Sistema de memoria de cartas. Llama SOTA agresivamente cuando va perdiendo. El oponente más exigente del juego.',
+        en: 'Card memory system. Calls SOTA aggressively when losing. The most demanding opponent in the game.',
+        de: 'Kartenspeichersystem. Ruft SOTA aggressiv beim Verlieren. Der anspruchsvollste Gegner im Spiel.',
+        fr: 'Système de mémoire des cartes. Appelle SOTA agressivement en perdant. L\'adversaire le plus exigeant du jeu.'
+    },
+
+    // ── Achievements Section ──────────────────────────────────────────────
+    achievementsTitle: {
+        es: 'Logros y progresión',
+        en: 'Achievements & Progression',
+        de: 'Errungenschaften & Fortschritt',
+        fr: 'Succès & Progression'
+    },
+    achievementsDesc: {
+        es: 'Cada partida cuenta. Desbloquea logros desde las primeras victorias hasta hazañas legendarias.',
+        en: 'Every match counts. Unlock achievements from your first wins to legendary feats.',
+        de: 'Jede Partie zählt. Schalte Errungenschaften von den ersten Siegen bis zu legendären Leistungen frei.',
+        fr: 'Chaque partie compte. Débloquez des succès de vos premières victoires à des exploits légendaires.'
+    },
+    achievementFourSotasDesc: {
+        es: 'Gana un partido con las cuatro sotas en la mano.',
+        en: 'Win a match with all four Jacks in hand.',
+        de: 'Gewinne ein Match mit allen vier Buben in der Hand.',
+        fr: 'Gagne un match avec les quatre valets en main.'
+    },
+    achievementComebackDesc: {
+        es: 'Gana un partido estando en desventaja de rondas.',
+        en: 'Win a match from behind in rounds.',
+        de: 'Gewinne ein Match, obwohl du bei Runden hinten liegst.',
+        fr: 'Gagne un match en étant en retard dans les manches.'
+    },
+    achievementPerfectDesc: {
+        es: 'Gana el partido sin perder una sola ronda.',
+        en: 'Win the match without losing a single round.',
+        de: 'Gewinne das Match ohne eine einzige Runde zu verlieren.',
+        fr: 'Gagne le match sans perdre une seule manche.'
+    },
+    achievementWins250Desc: {
+        es: 'Alcanza 250 victorias.',
+        en: 'Reach 250 wins.',
+        de: 'Erreiche 250 Siege.',
+        fr: 'Atteins 250 victoires.'
+    },
+
+    // ── FAQ Section ───────────────────────────────────────────────────────
+    faqTitle: {
+        es: 'Preguntas frecuentes',
+        en: 'Frequently Asked Questions',
+        de: 'Häufige Fragen',
+        fr: 'Questions fréquentes'
+    },
+    faq1Q: {
+        es: '¿Qué es el Guiñote?',
+        en: 'What is Guiñote?',
+        de: 'Was ist Guiñote?',
+        fr: 'Qu\'est-ce que le Guiñote ?'
+    },
+    faq1A: {
+        es: 'El Guiñote es uno de los juegos de cartas tradicionales más populares de España, especialmente en Aragón. Se juega con la baraja española de 40 cartas y el objetivo es tener la menor puntuación posible en la mano. Cuatro Sotas es una variante digital con una mecánica exclusiva: colecciona las cuatro sotas para ganar al instante.',
+        en: 'Guiñote is one of the most popular traditional card games in Spain, especially in Aragon. It\'s played with a Spanish 40-card deck and the goal is to have the lowest possible score in hand. Cuatro Sotas is a digital variant with an exclusive mechanic: collect all four Jacks to win instantly.',
+        de: 'Guiñote ist eines der beliebtesten traditionellen Kartenspiele Spaniens, besonders in Aragón. Es wird mit einem 40-Karten-Deck gespielt, Ziel ist die niedrigste mögliche Handpunktzahl. Cuatro Sotas ist eine digitale Variante mit einer exklusiven Mechanik: Sammle alle vier Buben für den Sofortsieg.',
+        fr: 'Le Guiñote est l\'un des jeux de cartes traditionnels les plus populaires d\'Espagne, surtout en Aragon. Il se joue avec un jeu espagnol de 40 cartes, l\'objectif étant d\'avoir le score le plus bas. Cuatro Sotas est une variante numérique avec une mécanique exclusive : collecte les quatre valets pour gagner instantanément.'
+    },
+    faq2Q: {
+        es: '¿Puedo jugar sin conexión a internet?',
+        en: 'Can I play without an internet connection?',
+        de: 'Kann ich ohne Internetverbindung spielen?',
+        fr: 'Puis-je jouer sans connexion internet ?'
+    },
+    faq2A: {
+        es: 'Sí. El modo contra la IA funciona completamente sin conexión. El multijugador local (Bluetooth y Wi-Fi directo) tampoco requiere internet. Solo el multijugador online necesita conexión.',
+        en: 'Yes. AI mode works completely offline. Local multiplayer (Bluetooth and direct Wi-Fi) also requires no internet. Only online multiplayer needs a network connection.',
+        de: 'Ja. Der KI-Modus ist vollständig offline. Lokaler Mehrspieler (Bluetooth und direktes Wi-Fi) braucht ebenfalls kein Internet. Nur Online-Mehrspieler benötigt eine Verbindung.',
+        fr: 'Oui. Le mode IA fonctionne entièrement hors ligne. Le multijoueur local (Bluetooth et Wi-Fi direct) ne nécessite pas non plus d\'internet. Seul le multijoueur en ligne a besoin d\'une connexion.'
+    },
+    faq3Q: {
+        es: '¿Qué pasa exactamente cuando llamo SOTA?',
+        en: 'What exactly happens when I call SOTA?',
+        de: 'Was passiert genau, wenn ich SOTA rufe?',
+        fr: 'Que se passe-t-il exactement quand j\'appelle SOTA ?'
+    },
+    faq3A: {
+        es: 'La partida entra en fase de último turno. Ambos jugadores tienen un turno más para mejorar su mano. Luego se revelan las cartas: el de menor puntuación gana la ronda. En empate, gana quien NO llamó. Si llamas y el rival tiene menos puntos, pierde la ronda.',
+        en: 'The game enters last-turn phase. Both players get one more turn to improve their hand. Then cards are revealed: lowest score wins the round. On a tie, the non-caller wins. If you call and your opponent has fewer points, you lose the round.',
+        de: 'Das Spiel tritt in die letzte Zugphase ein. Beide Spieler haben einen weiteren Zug. Dann werden Karten aufgedeckt: der niedrigste Score gewinnt die Runde. Bei Gleichstand gewinnt der Nicht-Rufer. Rufst du und dein Gegner hat weniger Punkte, verlierst du die Runde.',
+        fr: 'Le jeu entre en phase de dernier tour. Les deux joueurs ont un tour de plus. Puis les cartes sont révélées : le score le plus bas gagne la manche. En cas d\'égalité, le non-appelant gagne. Si vous appelez et que votre adversaire a moins de points, vous perdez la manche.'
+    },
+    faq4Q: {
+        es: '¿Qué es exactamente la condición de las Cuatro Sotas?',
+        en: 'What exactly is the Four Jacks condition?',
+        de: 'Was genau ist die Vier-Buben-Bedingung?',
+        fr: 'Qu\'est-ce que la condition des Quatre Valets exactement ?'
+    },
+    faq4A: {
+        es: 'Si en cualquier momento tienes las cuatro sotas — la de Oros, Copas, Espadas y Bastos — simultáneamente en la mano, ganas el partido completo de inmediato. Sin importar el marcador de rondas. Esta condición es rara, invaluable y el logro más preciado del juego.',
+        en: 'If at any point you hold all four Jacks — Coins, Cups, Swords and Clubs — simultaneously in hand, you instantly win the entire match. Regardless of the round score. This condition is rare, invaluable, and the most prized feat in the game.',
+        de: 'Wenn du alle vier Buben — Münzen, Kelche, Schwerter und Stäbe — gleichzeitig in der Hand hast, gewinnst du das gesamte Match sofort. Unabhängig vom Rundenstand. Diese Bedingung ist selten, unschätzbar und die begehrteste Leistung im Spiel.',
+        fr: 'Si vous tenez les quatre valets — Pièces, Coupes, Épées et Bâtons — simultanément en main, vous gagnez instantanément le match entier. Quel que soit le score des manches. Cette condition est rare, inestimable et l\'exploit le plus convoité du jeu.'
+    },
+    faq5Q: {
+        es: '¿Cómo funciona el ranking global?',
+        en: 'How does the global ranking work?',
+        de: 'Wie funktioniert das globale Ranking?',
+        fr: 'Comment fonctionne le classement mondial ?'
+    },
+    faq5A: {
+        es: 'El ranking se basa en puntos acumulados entre partidas. Al ganar una ronda, restas tu puntuación de mano (cuanto más negativo, mejor). Al perder, sumas tu puntuación. El jugador con los puntos más negativos lidera el ranking global. Los usuarios Premium tienen multiplicadores de ranking.',
+        en: 'The ranking is based on accumulated points across matches. When you win a round, you subtract your hand score (more negative = better). When you lose, you add it. The player with the most negative points leads the global ranking. Premium users have ranking multipliers.',
+        de: 'Das Ranking basiert auf kumulierten Punkten über Matches. Beim Rundengewinn subtrahierst du deinen Handscore (negativer = besser). Bei Verlust addierst du ihn. Der negativste Spieler führt das globale Ranking. Premium-Nutzer haben Ranking-Multiplikatoren.',
+        fr: 'Le classement est basé sur les points accumulés entre les parties. En gagnant une manche, vous soustrayez votre score de main (plus négatif = mieux). En perdant, vous l\'ajoutez. Le joueur le plus négatif mène le classement mondial. Les utilisateurs Premium ont des multiplicateurs de classement.'
     }
 } as const satisfies Record<string, LocalizedValue>;
 

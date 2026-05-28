@@ -28,7 +28,7 @@ export default function Navbar() {
     const locale = useLocale();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
-    const desktopLinks = NAV_LINKS.filter((item) => item.href !== '/');
+    const desktopLinks = NAV_LINKS;
 
     const openButtonRef = useRef<HTMLButtonElement | null>(null);
     const closeButtonRef = useRef<HTMLButtonElement | null>(null);

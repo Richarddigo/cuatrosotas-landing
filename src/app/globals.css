@@ -1844,3 +1844,287 @@ footer>div {
   max-width: 100%;
   padding: 0;
 }
+/* -------------------------------------------------------
+   How-a-turn-works — 3-step flow
+   ------------------------------------------------------- */
+.turn-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.turn-step {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.turn-step:hover {
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.turn-step-num {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--accent);
+  color: #fff;
+  margin-top: 0.1rem;
+}
+
+.turn-step:nth-child(3) .turn-step-num {
+  background: var(--green);
+}
+
+.turn-step-body h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.turn-step-body p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .turn-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .turn-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* -------------------------------------------------------
+   AI difficulty cards
+   ------------------------------------------------------- */
+.ai-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.ai-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ai-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ai-card-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.ai-badge-easy {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ADE80;
+  border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.ai-badge-medium {
+  background: rgba(251, 191, 36, 0.12);
+  color: #FBB924;
+  border: 1px solid rgba(251, 191, 36, 0.22);
+}
+
+.ai-badge-hard {
+  background: rgba(248, 113, 113, 0.12);
+  color: #F87171;
+  border: 1px solid rgba(248, 113, 113, 0.22);
+}
+
+.ai-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.ai-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .ai-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* -------------------------------------------------------
+   Achievement showcase
+   ------------------------------------------------------- */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.achievement-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color var(--transition);
+}
+
+.achievement-card:hover {
+  border-color: var(--border-light);
+}
+
+.achievement-rarity {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.rarity-legendary {
+  background: rgba(156, 39, 176, 0.15);
+  color: #CE93D8;
+  border: 1px solid rgba(156, 39, 176, 0.25);
+}
+
+.rarity-epic {
+  background: rgba(91, 123, 255, 0.12);
+  color: #93A8FF;
+  border: 1px solid rgba(91, 123, 255, 0.22);
+}
+
+.rarity-rare {
+  background: rgba(59, 130, 246, 0.12);
+  color: #93C5FD;
+  border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+.achievement-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.achievement-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.achievement-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+  .achievement-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -------------------------------------------------------
+   FAQ accordion-style list
+   ------------------------------------------------------- */
+.faq-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.faq-item:hover {
+  border-color: var(--border-light);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  opacity: 0.55;
+  transition: transform var(--transition);
+}
+
+.faq-chevron--open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 1.4rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.faq-answer p {
+  margin: 0;
+}

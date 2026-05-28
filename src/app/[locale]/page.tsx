@@ -1,5 +1,6 @@
 ﻿'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useLanguage } from '@/context/LanguageContext';
@@ -86,6 +87,7 @@ export default function HomePage() {
   const navT = useTranslations('nav');
   const supportT = useTranslations('support');
   const es = lang === 'es';
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <main id="main-content">
@@ -218,6 +220,125 @@ export default function HomePage() {
                 </tbody>
               </table>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CÓMO FUNCIONA UN TURNO ── */}
+      <section className="section bg-light" aria-labelledby="turn-title">
+        <div className="container">
+          <h2 id="turn-title" className="section-title">{homeT('howToPlayTitle')}</h2>
+          <p className="mx-auto mb-6 max-w-[580px] text-center">{homeT('howToPlayDesc')}</p>
+          <div className="turn-steps">
+            <div className="turn-step">
+              <div className="turn-step-num" aria-hidden="true">1</div>
+              <div className="turn-step-body">
+                <h3>{homeT('step1Title')}</h3>
+                <p>{homeT('step1Desc')}</p>
+              </div>
+            </div>
+            <div className="turn-step">
+              <div className="turn-step-num" aria-hidden="true">2</div>
+              <div className="turn-step-body">
+                <h3>{homeT('step2Title')}</h3>
+                <p>{homeT('step2Desc')}</p>
+              </div>
+            </div>
+            <div className="turn-step">
+              <div className="turn-step-num" aria-hidden="true">3</div>
+              <div className="turn-step-body">
+                <h3>{homeT('step3Title')}</h3>
+                <p>{homeT('step3Desc')}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OPONENTE IA ── */}
+      <section className="section" aria-labelledby="ai-title">
+        <div className="container">
+          <h2 id="ai-title" className="section-title">{homeT('aiTitle')}</h2>
+          <p className="mx-auto mb-6 max-w-[580px] text-center">{homeT('aiDesc')}</p>
+          <div className="ai-cards">
+            <div className="ai-card">
+              <span className="ai-card-badge ai-badge-easy">{homeT('aiEasyBadge')}</span>
+              <h3>{homeT('aiEasyName')}</h3>
+              <p>{homeT('aiEasyDesc')}</p>
+            </div>
+            <div className="ai-card">
+              <span className="ai-card-badge ai-badge-medium">{homeT('aiMediumBadge')}</span>
+              <h3>{homeT('aiMediumName')}</h3>
+              <p>{homeT('aiMediumDesc')}</p>
+            </div>
+            <div className="ai-card">
+              <span className="ai-card-badge ai-badge-hard">{homeT('aiHardBadge')}</span>
+              <h3>{homeT('aiHardName')}</h3>
+              <p>{homeT('aiHardDesc')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LOGROS ── */}
+      <section className="section bg-light" aria-labelledby="achievements-title">
+        <div className="container">
+          <h2 id="achievements-title" className="section-title">{homeT('achievementsTitle')}</h2>
+          <p className="mx-auto mb-6 max-w-[580px] text-center">{homeT('achievementsDesc')}</p>
+          <div className="achievement-grid">
+            <div className="achievement-card">
+              <span className="achievement-icon" aria-hidden="true">👑</span>
+              <span className="achievement-rarity rarity-legendary">Legendary</span>
+              <h3>{es ? 'Cuatro Sotas' : 'Four Jacks'}</h3>
+              <p>{homeT('achievementFourSotasDesc')}</p>
+            </div>
+            <div className="achievement-card">
+              <span className="achievement-icon" aria-hidden="true">🔥</span>
+              <span className="achievement-rarity rarity-epic">Epic</span>
+              <h3>{es ? 'Remontada' : 'Comeback'}</h3>
+              <p>{homeT('achievementComebackDesc')}</p>
+            </div>
+            <div className="achievement-card">
+              <span className="achievement-icon" aria-hidden="true">⚡</span>
+              <span className="achievement-rarity rarity-rare">Rare</span>
+              <h3>{es ? 'Partida Perfecta' : 'Perfect Match'}</h3>
+              <p>{homeT('achievementPerfectDesc')}</p>
+            </div>
+            <div className="achievement-card">
+              <span className="achievement-icon" aria-hidden="true">🏆</span>
+              <span className="achievement-rarity rarity-epic">Epic</span>
+              <h3>250 {es ? 'victorias' : 'wins'}</h3>
+              <p>{homeT('achievementWins250Desc')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="section" aria-labelledby="faq-title">
+        <div className="container">
+          <h2 id="faq-title" className="section-title">{homeT('faqTitle')}</h2>
+          <div className="faq-list" role="list">
+            {([1, 2, 3, 4, 5] as const).map(n => (
+              <div key={n} className="faq-item" role="listitem">
+                <button
+                  className="faq-question"
+                  onClick={() => setOpenFaq(openFaq === n ? null : n)}
+                  aria-expanded={openFaq === n}
+                  aria-controls={`faq-answer-${n}`}
+                >
+                  {homeT(`faq${n}Q` as Parameters<typeof homeT>[0])}
+                  <svg className={`faq-chevron${openFaq === n ? ' faq-chevron--open' : ''}`} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {openFaq === n && (
+                  <div id={`faq-answer-${n}`} className="faq-answer faq-answer--open">
+                    <p>{homeT(`faq${n}A` as Parameters<typeof homeT>[0])}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

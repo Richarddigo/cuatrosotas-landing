@@ -1,10 +1,8 @@
 ﻿import { getTranslations, setRequestLocale } from 'next-intl/server';
-import dynamic from 'next/dynamic';
 import { Link } from '@/i18n/navigation';
 import type { Lang } from '@/context/LanguageContext';
 import { SHOW_PREMIUM_PUBLIC_INFO } from '@/lib/publicationFlags';
-
-const FaqAccordion = dynamic(() => import('@/components/FaqAccordion'));
+import FaqAccordion from '@/components/FaqAccordion';
 
 // ── Section data helpers ──────────────────────────────────────────────────────
 

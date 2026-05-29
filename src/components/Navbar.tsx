@@ -135,7 +135,7 @@ export default function Navbar() {
                                 width={32}
                                 height={32}
                                 loading="eager"
-                                className="h-7 w-auto rounded-md transition-all duration-200 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] min-[900px]:h-8"
+                                className="h-7 w-7 rounded-md transition-all duration-200 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] min-[900px]:h-8 min-[900px]:w-8"
                             />
                             <span className="hidden min-[380px]:inline text-base font-bold text-white transition-all duration-200 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.55)] min-[900px]:text-lg">
                                 {t('siteTitle')}

@@ -1,13 +1,11 @@
-'use client';
-
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export default function Footer() {
-    const navT = useTranslations('nav');
-    const footerT = useTranslations('footer');
+export default async function Footer() {
+    const navT = await getTranslations('nav');
+    const footerT = await getTranslations('footer');
 
     const navLinks = [
         { href: '/' as const, label: navT('home') },
@@ -30,7 +28,7 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-4">
                         <Link href="/" className="flex items-center gap-3">
-                            <Image src="/logo.png" alt="Cuatro Sotas" width={28} height={28} className="h-7 w-auto" />
+                            <Image src="/logo.png" alt="Cuatro Sotas" width={28} height={28} className="h-7 w-7" />
                             <span className="text-base font-bold text-text">{navT('siteTitle')}</span>
                         </Link>
                         <p className={`${bodyText} max-w-[18ch]`}>{footerT('tagline')}</p>

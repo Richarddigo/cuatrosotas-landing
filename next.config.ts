@@ -7,9 +7,14 @@ const nextConfig: NextConfig = {
     async redirects() {
         return [
             // Permanent redirects: old routes → new /legal/* structure
-            { source: '/:locale/privacy', destination: '/:locale/legal/privacy', permanent: true },
-            { source: '/:locale/terms', destination: '/:locale/legal/terms', permanent: true },
-            { source: '/:locale/support', destination: '/:locale/legal/support', permanent: true },
+            // English (no locale prefix with as-needed)
+            { source: '/privacy', destination: '/legal/privacy', permanent: true },
+            { source: '/terms', destination: '/legal/terms', permanent: true },
+            { source: '/support', destination: '/legal/support', permanent: true },
+            // Non-default locales (de, es, fr) with prefix
+            { source: '/:locale(de|es|fr)/privacy', destination: '/:locale/legal/privacy', permanent: true },
+            { source: '/:locale(de|es|fr)/terms', destination: '/:locale/legal/terms', permanent: true },
+            { source: '/:locale(de|es|fr)/support', destination: '/:locale/legal/support', permanent: true },
         ];
     },
 };

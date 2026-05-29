@@ -489,7 +489,7 @@ const cookieBannerTranslations = {
     },
     acceptAll: { es: 'Aceptar todas', en: 'Accept all', de: 'Alle akzeptieren', fr: 'Tout accepter' },
     reject: { es: 'Solo necesarias', en: 'Essentials only', de: 'Nur notwendige', fr: 'Nécessaires seulement' },
-    moreInfo: { es: 'Más info', en: 'More Info', de: 'Mehr Info', fr: "Plus d'infos" },
+    moreInfo: { es: 'Política de cookies', en: 'Cookie Policy', de: 'Cookie-Richtlinie', fr: 'Politique de cookies' },
     ariaLabel: { es: 'Consentimiento de cookies', en: 'Cookie consent', de: 'Cookie-Einwilligung', fr: 'Consentement aux cookies' }
 } as const satisfies Record<string, LocalizedValue>;
 

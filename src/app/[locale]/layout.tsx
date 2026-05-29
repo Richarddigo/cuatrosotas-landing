@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBannerLazy';
+import CookieBanner from '@/components/CookieBanner';
 import { SHOW_PREMIUM_PUBLIC_INFO } from '@/lib/publicationFlags';
 
 export const viewport: Viewport = {

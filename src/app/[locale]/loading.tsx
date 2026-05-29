@@ -1,61 +1,26 @@
 export default function Loading() {
     return (
         <div
-            className="container-studio section-padding"
-            style={{ animationName: 'none' }}
+            className="container-studio section-padding [animation-name:none]"
             aria-label="Loading…"
             role="status"
         >
-            <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+            <div className="max-w-[680px] mx-auto">
                 {/* Title skeleton */}
-                <div
-                    style={{
-                        height: '2.5rem',
-                        width: '60%',
-                        background: 'rgba(255,255,255,0.06)',
-                        borderRadius: 'var(--radius)',
-                        marginBottom: '1rem',
-                        animation: 'pulse 1.5s ease-in-out infinite',
-                    }}
-                />
+                <div className="animate-pulse h-10 w-[60%] bg-[rgba(255,255,255,0.06)] rounded-[var(--radius)] mb-4" />
                 {/* Subtitle skeleton */}
-                <div
-                    style={{
-                        height: '1rem',
-                        width: '85%',
-                        background: 'rgba(255,255,255,0.06)',
-                        borderRadius: 'var(--radius)',
-                        marginBottom: '0.5rem',
-                        animation: 'pulse 1.5s ease-in-out infinite',
-                    }}
-                />
-                <div
-                    style={{
-                        height: '1rem',
-                        width: '70%',
-                        background: 'rgba(255,255,255,0.06)',
-                        borderRadius: 'var(--radius)',
-                        marginBottom: '2rem',
-                        animation: 'pulse 1.5s ease-in-out infinite',
-                    }}
-                />
+                <div className="animate-pulse h-4 w-[85%] bg-[rgba(255,255,255,0.06)] rounded-[var(--radius)] mb-2" />
+                <div className="animate-pulse h-4 w-[70%] bg-[rgba(255,255,255,0.06)] rounded-[var(--radius)] mb-8" />
                 {/* Card skeletons */}
                 {[1, 2, 3].map((i) => (
                     <div
                         key={i}
-                        style={{
-                            background: 'rgba(255,255,255,0.04)',
-                            border: '1px solid rgba(255,255,255,0.07)',
-                            borderRadius: 'var(--radius)',
-                            padding: '1.5rem',
-                            marginBottom: '1rem',
-                            animation: 'pulse 1.5s ease-in-out infinite',
-                            animationDelay: `${i * 150}ms`,
-                        }}
+                        className="animate-pulse bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.07)] rounded-[var(--radius)] p-6 mb-4"
+                        style={{ animationDelay: `${i * 150}ms` }}
                     >
-                        <div style={{ height: '0.875rem', width: '40%', background: 'rgba(255,255,255,0.08)', borderRadius: '4px', marginBottom: '0.75rem' }} />
-                        <div style={{ height: '0.75rem', width: '100%', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', marginBottom: '0.4rem' }} />
-                        <div style={{ height: '0.75rem', width: '90%', background: 'rgba(255,255,255,0.06)', borderRadius: '4px' }} />
+                        <div className="h-3.5 w-[40%] bg-[rgba(255,255,255,0.08)] rounded-sm mb-3" />
+                        <div className="h-3 w-full bg-[rgba(255,255,255,0.06)] rounded-sm mb-[0.4rem]" />
+                        <div className="h-3 w-[90%] bg-[rgba(255,255,255,0.06)] rounded-sm" />
                     </div>
                 ))}
             </div>

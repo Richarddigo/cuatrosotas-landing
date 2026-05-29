@@ -1,5 +1,5 @@
 ﻿/* =====================================================================
-   Cuatro Sotas â€” Shared Stylesheet
+   Cuatro Sotas — Shared Stylesheet
    Mobile-first. Breakpoints: 480px / 768px / 1024px
    Fonts: Inter (all weights) — Aligned with Cojauny Studio
    ===================================================================== */
@@ -12,7 +12,7 @@
    Product colours (green, gold, red) remain Cuatro Sotas brand.
    ------------------------------------------------------- */
 :root {
-  /* â”€â”€ Cuatro Sotas brand palette â”€â”€ */
+  /* ── Cuatro Sotas brand palette ── */
   --green: #1A472A;
   /* hero / filled sections */
   --green-dark: #0D2818;
@@ -22,12 +22,12 @@
   --red: #EF4444;
   --blue: #1E3A5F;
 
-  /* â”€â”€ Dark theme (Studio branding) â”€â”€ */
+  /* ── Dark theme (Studio branding) ── */
   --bg: #0C1120;
   --surface: #1C2336;
   --surface-2: #2A3550;
   --cream: #0C1120;
-  /* body background â€” now dark */
+  /* body background — now dark */
   --white: #FFFFFF;
   /* kept for hero/filled-section text */
   --card-bg: #1C2336;
@@ -35,20 +35,20 @@
   --bg-light: #161E32;
   /* alternate section background */
 
-  /* â”€â”€ Accent: vibrant green readable on dark bg â”€â”€ */
+  /* ── Accent: vibrant green readable on dark bg ── */
   --accent: #5B7BFF;
   --accent-dim: #3A59D9;
   --accent-glow: rgba(91, 123, 255, 0.18);
 
-  /* â”€â”€ Text â”€â”€ */
+  /* ── Text ── */
   --text: #F1F5F9;
   --text-muted: #94A3B8;
 
-  /* â”€â”€ Borders â”€â”€ */
+  /* ── Borders ── */
   --border: rgba(255, 255, 255, 0.08);
   --border-light: rgba(255, 255, 255, 0.12);
 
-  /* â”€â”€ Structure â”€â”€ */
+  /* ── Structure ── */
   --radius-sm: 6px;
   --radius: 12px;
   --radius-lg: 20px;
@@ -69,6 +69,7 @@
   --color-surface-2: #2A3550;
   --color-accent: #5B7BFF;
   --color-accent-dim: #3A59D9;
+  --color-accent-light: #93A8FF;
   --color-text: #F1F5F9;
   --color-muted: #94A3B8;
   --shadow-soft-glow: 0 20px 60px rgba(90, 103, 242, 0.25);
@@ -1016,7 +1017,7 @@ strong {
 }
 
 /* -------------------------------------------------------
-   How to play â€” steps
+   How to play — steps
    ------------------------------------------------------- */
 .steps-grid {
   display: grid;
@@ -1618,7 +1619,7 @@ footer>div {
 }
 
 /* -------------------------------------------------------
-   Responsive â€” 480px+
+   Responsive — 480px+
    ------------------------------------------------------- */
 @media (min-width: 480px) {
   .suits-grid {
@@ -1632,7 +1633,7 @@ footer>div {
 }
 
 /* -------------------------------------------------------
-   Responsive â€” 640px+
+   Responsive — 640px+
    ------------------------------------------------------- */
 @media (min-width: 640px) {
   .modes-grid {
@@ -1645,7 +1646,7 @@ footer>div {
 }
 
 /* -------------------------------------------------------
-   Responsive â€” 768px+
+   Responsive — 768px+
    ------------------------------------------------------- */
 @media (min-width: 768px) {
   .section {
@@ -1666,7 +1667,7 @@ footer>div {
 }
 
 /* -------------------------------------------------------
-   Responsive â€” 1024px+
+   Responsive — 1024px+
    ------------------------------------------------------- */
 @media (min-width: 1024px) {
   :root {

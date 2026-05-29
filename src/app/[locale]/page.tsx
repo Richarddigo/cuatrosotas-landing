@@ -1,11 +1,8 @@
-﻿'use client';
-
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+﻿import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { useLanguage } from '@/context/LanguageContext';
 import type { Lang } from '@/context/LanguageContext';
 import { SHOW_PREMIUM_PUBLIC_INFO } from '@/lib/publicationFlags';
+import FaqAccordion from '@/components/FaqAccordion';
 
 // ── Section data helpers ──────────────────────────────────────────────────────
 
@@ -81,13 +78,14 @@ const statsCards = (lang: Lang) => STATS_CARDS.map(c => ({ icon: c.icon, title: 
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-export default function HomePage() {
-  const { lang } = useLanguage();
-  const homeT = useTranslations('home');
-  const navT = useTranslations('nav');
-  const supportT = useTranslations('support');
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const lang = locale as Lang;
   const es = lang === 'es';
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const homeT = await getTranslations({ locale, namespace: 'home' });
+  const navT = await getTranslations({ locale, namespace: 'nav' });
+  const supportT = await getTranslations({ locale, namespace: 'support' });
 
   return (
     <main id="main-content">
@@ -318,28 +316,7 @@ export default function HomePage() {
       <section className="section" aria-labelledby="faq-title">
         <div className="container">
           <h2 id="faq-title" className="section-title">{homeT('faqTitle')}</h2>
-          <div className="faq-list" role="list">
-            {([1, 2, 3, 4, 5] as const).map(n => (
-              <div key={n} className="faq-item" role="listitem">
-                <button
-                  className="faq-question"
-                  onClick={() => setOpenFaq(openFaq === n ? null : n)}
-                  aria-expanded={openFaq === n}
-                  aria-controls={`faq-answer-${n}`}
-                >
-                  {homeT(`faq${n}Q` as Parameters<typeof homeT>[0])}
-                  <svg className={`faq-chevron${openFaq === n ? ' faq-chevron--open' : ''}`} viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                {openFaq === n && (
-                  <div id={`faq-answer-${n}`} className="faq-answer faq-answer--open">
-                    <p>{homeT(`faq${n}A` as Parameters<typeof homeT>[0])}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </section>
 

@@ -105,14 +105,7 @@ export default function LanguageSwitcher({ dropdownDirection = 'down', onSelect,
                 aria-haspopup="menu"
                 aria-expanded={open}
                 aria-label={buttonAriaLabel}
-                className={`${fullWidth ? 'mx-auto' : ''} inline-flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white shadow-soft-glow transition hover:border-brand-200 hover:bg-white/10 focus:outline-none focus-visible:border-brand-200 focus-visible:ring-2 focus-visible:ring-brand-200/50`}
-                style={{
-                    minHeight: '38px',
-                    paddingTop: '8px',
-                    paddingRight: '12px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                }}
+                className={`${fullWidth ? 'mx-auto' : ''} inline-flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 px-3 py-2 min-h-[38px] text-sm font-medium text-white shadow-soft-glow transition hover:border-brand-200 hover:bg-white/10 focus:outline-none focus-visible:border-brand-200 focus-visible:ring-2 focus-visible:ring-brand-200/50`}
             >
                 <span aria-hidden className="flex items-center">
                     <active.Flag className="h-5 w-5 rounded-sm" />
@@ -135,7 +128,6 @@ export default function LanguageSwitcher({ dropdownDirection = 'down', onSelect,
                     role="menu"
                     aria-label={t('languageSwitcherMenuAria')}
                     className={`absolute z-50 left-1/2 w-auto min-w-max -translate-x-1/2 transform overflow-hidden rounded-3xl border border-white/10 bg-slate-900/95 p-2 shadow-soft-glow backdrop-blur sm:left-auto sm:right-0 sm:translate-x-0 ${dropdownDirection === 'up' ? 'bottom-full mb-2 origin-bottom-right' : 'mt-2 origin-top-right'}`}
-                    style={{ padding: '8px' }}
                     onTouchStart={(e) => {
                         const target = e.currentTarget as TouchTrackingElement;
                         target._touchStartX = e.touches?.[0]?.clientX ?? 0;
@@ -166,12 +158,6 @@ export default function LanguageSwitcher({ dropdownDirection = 'down', onSelect,
                                         ? 'text-white [text-shadow:0_0_10px_rgba(255,255,255,0.55)]'
                                         : 'text-white/80 hover:text-white hover:[text-shadow:0_0_10px_rgba(255,255,255,0.55)]'
                                         }`}
-                                    style={{
-                                        paddingTop: '8px',
-                                        paddingRight: '12px',
-                                        paddingBottom: '8px',
-                                        paddingLeft: '12px',
-                                    }}
                                 >
                                     <span className="flex items-center gap-3">
                                         <span aria-hidden className="flex h-8 w-8 items-center justify-center">

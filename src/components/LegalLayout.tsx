@@ -19,65 +19,31 @@ export function LegalLayout({
     children: ReactNode;
 }) {
     return (
-        <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '5rem', paddingBottom: '4rem' }}>
-            <div className="container-studio" style={{ maxWidth: '740px' }}>
+        <div className="bg-bg min-h-screen pt-20 pb-16">
+            <div className="container-studio max-w-[740px]">
                 <Link
                     href="/"
-                    className="focus-ring"
-                    style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.375rem',
-                        fontSize: '0.875rem',
-                        color: 'var(--text-muted)',
-                        textDecoration: 'none',
-                        marginBottom: '2.5rem',
-                        transition: 'color var(--transition)',
-                        borderRadius: '4px',
-                    }}
-                    onMouseOver={(e) => (e.currentTarget.style.color = 'var(--text)')}
-                    onMouseOut={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+                    className="focus-ring inline-flex items-center gap-1.5 text-sm text-muted no-underline mb-10 rounded transition-colors hover:text-text"
                 >
                     {backLabel}
                 </Link>
 
-                <div style={{ marginBottom: '2.5rem' }}>
-                    <span style={{
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: 'var(--accent)',
-                    }}>
+                <div className="mb-10">
+                    <span className="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-accent">
                         Legal
                     </span>
-                    <h1 style={{
-                        fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
-                        fontWeight: 800,
-                        color: 'var(--text)',
-                        marginTop: '0.5rem',
-                        letterSpacing: '-0.02em',
-                        lineHeight: 1.15,
-                    }}>
+                    <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-text mt-2 tracking-[-0.02em] leading-[1.15]">
                         {title}
                     </h1>
-                    <p style={{ marginTop: '0.75rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                    <p className="mt-3 text-muted text-sm">
                         {subtitle}
                     </p>
                     {updatedLabel && (
-                        <span style={{
-                            display: 'inline-block',
-                            marginTop: '0.75rem',
-                            background: 'rgba(255,255,255,0.06)',
-                            color: 'rgba(255,255,255,0.6)',
-                            fontSize: '0.78rem',
-                            padding: '0.25rem 0.75rem',
-                            borderRadius: '20px',
-                        }}>
+                        <span className="inline-block mt-3 bg-[rgba(255,255,255,0.06)] text-[rgba(255,255,255,0.6)] text-[0.78rem] px-3 py-1 rounded-[20px]">
                             {updatedLabel}
                         </span>
                     )}
-                    <div style={{ marginTop: '1.5rem', height: '1px', background: 'var(--border)' }} />
+                    <div className="mt-6 h-px bg-[var(--border)]" />
                 </div>
 
                 <div className="legal-content">

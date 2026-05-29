@@ -35,8 +35,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const { locale } = await params;
     const languages: Record<string, string> = {};
-    for (const alt of routing.locales) languages[alt] = `${BASE_URL}/${alt}`;
-    languages['x-default'] = `${BASE_URL}/${routing.defaultLocale}`;
+    for (const alt of routing.locales) {
+        languages[alt] = alt === routing.defaultLocale
+            ? BASE_URL
+            : `${BASE_URL}/${alt}`;
+    }
+    languages['x-default'] = BASE_URL;
 
     return {
         metadataBase: new URL(BASE_URL),
@@ -67,13 +71,13 @@ export async function generateMetadata({
                     : 'Guiñote español para móvil: vs IA, multijugador local y online, con ranking global.',
             type: 'website',
             siteName: 'Cuatro Sotas',
-            url: `${BASE_URL}/${locale}`,
+            url: locale === routing.defaultLocale ? BASE_URL : `${BASE_URL}/${locale}`,
             locale: OG_LOCALES[locale] ?? 'es_ES',
             alternateLocale: Object.values(OG_LOCALES).filter((l) => l !== (OG_LOCALES[locale] ?? 'es_ES')),
             images: [{ url: `${BASE_URL}/logo.png`, width: 512, height: 512, alt: 'Cuatro Sotas' }],
         },
         alternates: {
-            canonical: `${BASE_URL}/${locale}`,
+            canonical: locale === routing.defaultLocale ? BASE_URL : `${BASE_URL}/${locale}`,
             languages,
         },
     };
@@ -132,7 +136,6 @@ export default async function LocaleLayout({
                 <a
                     href="#main-content"
                     className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-bg focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
-                    style={{ color: 'var(--accent)' }}
                 >
                     {commonT('skipToMainContent')}
                 </a>

@@ -9,45 +9,23 @@ export default function NotFound() {
     return (
         <main
             id="main-content"
-            className="container-studio section-padding"
-            style={{ textAlign: 'center' }}
+            className="container-studio section-padding text-center"
         >
             <div
-                className="gradient-text"
-                style={{
-                    fontSize: 'clamp(6rem, 20vw, 10rem)',
-                    fontWeight: 900,
-                    lineHeight: 1,
-                    marginBottom: '1.5rem',
-                }}
+                className="gradient-text text-[clamp(6rem,20vw,10rem)] font-black leading-none mb-6"
                 aria-hidden="true"
             >
                 404
             </div>
-            <h1 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.75rem)', fontWeight: 700, color: 'var(--text)', marginBottom: '0.75rem' }}>
+            <h1 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-text mb-3">
                 {t('title')}
             </h1>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+            <p className="text-muted mb-8">
                 {t('desc')}
             </p>
             <Link
                 href="/"
-                className="focus-ring"
-                style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    padding: '0.625rem 1.5rem',
-                    background: 'var(--accent)',
-                    color: '#fff',
-                    borderRadius: 'var(--radius)',
-                    fontWeight: 600,
-                    fontSize: '0.9rem',
-                    textDecoration: 'none',
-                    transition: 'opacity var(--transition)',
-                }}
-                onMouseOver={(e) => (e.currentTarget.style.opacity = '0.85')}
-                onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
+                className="focus-ring inline-flex items-center gap-2 px-6 py-2.5 bg-accent text-white rounded-[var(--radius)] font-semibold text-[0.9rem] no-underline transition-opacity hover:opacity-85"
             >
                 {t('cta')}
             </Link>

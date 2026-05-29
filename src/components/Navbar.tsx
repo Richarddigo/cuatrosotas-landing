@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
-import { useState, useEffect, useRef, useSyncExternalStore } from 'react';
-import LanguageSwitcher from './LanguageSwitcher';
+import { useState, useEffect, useRef } from 'react';
+import LanguageSwitcher from './LanguageSwitcherLazy';
 import {
     NAVIGATION_CONTRACT,
     emitMobileMenuTelemetry,
@@ -35,11 +35,10 @@ export default function Navbar() {
     const menuRef = useRef<HTMLDivElement | null>(null);
 
     const portalEl = useMenuPortal();
-    const isHydrated = useSyncExternalStore(
-        () => () => { },
-        () => true,
-        () => false,
-    );
+    const [isHydrated, setIsHydrated] = useState(false);
+    useEffect(() => {
+        setIsHydrated(true);
+    }, []);
 
     useMobileMenuA11y(
         {

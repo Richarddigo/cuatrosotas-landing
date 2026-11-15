@@ -54,3 +54,14 @@ test('unavailable storage never opts in by itself and respects explicit tab choi
   chooseConsent('rejected');
   assert.equal(hasAnalyticsConsent(), false);
 });
+
+for (const observed of [null, '{invalid}', 'rejected']) {
+  test('a later read failure cannot revive accepted consent after observing ' + observed, () => {
+    chooseConsent('accepted');
+    if (observed === null) values.delete('cuatrosotas-consent');
+    else values.set('cuatrosotas-consent', observed);
+    assert.equal(hasAnalyticsConsent(), false);
+    failRead = true;
+    assert.equal(hasAnalyticsConsent(), false);
+  });
+}

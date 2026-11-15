@@ -17,7 +17,7 @@
   "validation": {
     "productionBuild": {
       "exit": 0,
-      "seconds": 4.908,
+      "seconds": 4.469,
       "missingMessageDiagnostics": 0
     },
     "browser": {
@@ -25,10 +25,10 @@
       "failed": 0,
       "skipped": 0,
       "workers": 1,
-      "secondsReportedByPlaywright": 14.8
+      "secondsReportedByPlaywright": 12.9
     },
     "consentUnit": {
-      "passed": 4,
+      "passed": 7,
       "failed": 0,
       "skipped": 0,
       "usesActualConsentSource": true
@@ -89,20 +89,35 @@
   ],
   "logs": [
     {
+      "gate": "unit",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-unit-20261116.log",
+      "sha256": "daed879b03cee89bf82a2982669a47d4b03f0367599fb35908f5628b64e07676"
+    },
+    {
+      "gate": "lint",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-lint-20261116.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "gate": "type",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-type-20261116.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "gate": "build",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-build-20261116.log",
-      "sha256": "dff2bb8badc3103ade69de620d4802b38bb31713b292719c322b80aadd23c389"
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-build-20261116.log",
+      "sha256": "933009588c24b7ae2454cd5700d1990e49d459dc2a6da7828543da29773e43b1"
     },
     {
       "gate": "browser",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-browser-20261116.log",
-      "sha256": "97df5c16f9bdcd244b7685cb7793e80521df4c540bdb541071ec9e00ddf03f45"
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-browser-20261116.log",
+      "sha256": "b644081f8c0312daa107470ab01b6d13b991f190dd5feba1c59d32194df61c96"
     }
   ],
   "screenshots": [
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop-first-visit.png",
-      "sha256": "db62f15492689e0852a2f4b30aaeefcbbf36c7340cb2c24253afa2a0d2fbaada",
+      "sha256": "5a3ce9d58b42eb48468a6251f35790870b9acea9506ee0501e3753641c6d1386",
       "width": 1440,
       "height": 1000
     },
@@ -120,7 +135,7 @@
     },
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile-first-visit.png",
-      "sha256": "68a15cd66f82c0b441f2b0f81f63520b4e935a54745f1ef808583540dee3aba1",
+      "sha256": "af5c2832af13cef49842833c2e581f56aa8e399deb22064aeb04c352c1e94ba9",
       "width": 390,
       "height": 844
     },
@@ -138,7 +153,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "f6cc208f6f4f3babd1b257a5c087abf6828eb78d9c809eaef30ff712bc749dd3"
+      "sha256": "01eca6b9899f04ede7136c31fc0784b0ef664ae744b0d76dd649138c00cbd7d6"
     },
     {
       "path": "package-lock.json",
@@ -198,7 +213,7 @@
     },
     {
       "path": "src/hooks/useConsent.ts",
-      "sha256": "cc9abc3a42bfab226f272201f5921603d758d228efa6c1ccb7793eb3d246dde9"
+      "sha256": "428236e5ae40ef2fd4a4a20dff7b61366c3781a0a4cb89740b1d4235f67a7d24"
     },
     {
       "path": "src/i18n/messages.ts",
@@ -210,7 +225,7 @@
     },
     {
       "path": "tests/consent.test.mjs",
-      "sha256": "eaace0152b8c4c7c80419066a6a32eeb4ee6605581415e8b707ec583638e51dc"
+      "sha256": "a13e3c63f0b849d15a27fd31c5b9c884c04de33f843161d06876bd22ed9db32b"
     },
     {
       "path": "tests/tabletop.spec.ts",
@@ -220,9 +235,84 @@
   "preview": {
     "url": "http://localhost:3003",
     "listenAddress": "::1",
-    "sessionId": 81152,
-    "observedPid": 9564,
+    "sessionId": 79769,
     "mode": "Controlled foreground execution session; no desktop browser opened. Start-Process attempt was rejected by automatic policy, so no detached helper was created.",
-    "qualification": "PID is point-in-time; stop through the owned execution session or revalidate process identity."
+    "qualification": "Current controlled foreground session79769 replaced81152 after the final batch. Stop through the owned session; no browser GUI was opened."
+  },
+  "updatedAt": "2026-11-15T23:21:14.661847+00:00",
+  "previousValidatedCommit": "34c9fe8e62fa41a798a5afa05d2fbe70e917267e",
+  "earlierValidationBeforeFallbackCorrection": {
+    "validation": {
+      "productionBuild": {
+        "exit": 0,
+        "seconds": 4.908,
+        "missingMessageDiagnostics": 0
+      },
+      "browser": {
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "workers": 1,
+        "secondsReportedByPlaywright": 14.8
+      },
+      "consentUnit": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "usesActualConsentSource": true
+      },
+      "lint": {
+        "exit": 0
+      },
+      "typeCheck": {
+        "exit": 0
+      },
+      "utf8": {
+        "strictDecode": true,
+        "suspiciousSequences": []
+      },
+      "gitDiffCheck": {
+        "exit": 0
+      }
+    },
+    "logs": [
+      {
+        "gate": "build",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-build-20261116.log",
+        "sha256": "dff2bb8badc3103ade69de620d4802b38bb31713b292719c322b80aadd23c389"
+      },
+      {
+        "gate": "browser",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-browser-20261116.log",
+        "sha256": "97df5c16f9bdcd244b7685cb7793e80521df4c540bdb541071ec9e00ddf03f45"
+      }
+    ],
+    "preview": {
+      "url": "http://localhost:3003",
+      "listenAddress": "::1",
+      "sessionId": 81152,
+      "observedPid": 9564,
+      "mode": "Controlled foreground execution session; no desktop browser opened. Start-Process attempt was rejected by automatic policy, so no detached helper was created.",
+      "qualification": "PID is point-in-time; stop through the owned execution session or revalidate process identity."
+    },
+    "qualification": "Historical first local acceptance, superseded after the later fallback-resurrection defect was reproduced."
+  },
+  "fallbackResurrectionCorrection": {
+    "red": {
+      "passed": 4,
+      "failed": 3,
+      "log": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-consent-fallback-red-20261116.log",
+      "sha256": "14f23c4a9b9b38f5f2a905d9d400282dff717a5c44ad7cfbb118e8f4e1a76b55"
+    },
+    "green": {
+      "passed": 7,
+      "failed": 0
+    },
+    "cases": [
+      "accepted -> readable missing -> read exception",
+      "accepted -> readable malformed -> read exception",
+      "accepted -> readable rejected -> read exception"
+    ],
+    "behavior": "A successful read updates tabConsent to the observed accepted/rejected/unknown state. A subsequent read exception cannot restore an older accepted value. failedWriteChoice retains priority."
   }
 }

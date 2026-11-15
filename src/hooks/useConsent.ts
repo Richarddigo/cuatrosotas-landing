@@ -9,7 +9,9 @@ function snapshot(): ConsentState {
   if (failedWriteChoice !== null) return failedWriteChoice;
   try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    return stored === 'accepted' || stored === 'rejected' ? stored : 'unknown';
+    // A later read failure may use only the last observed decision.
+    tabConsent = stored === 'accepted' || stored === 'rejected' ? stored : 'unknown';
+    return tabConsent;
   } catch {
     // Only a real read exception permits the explicit choice made in this tab.
     return tabConsent;

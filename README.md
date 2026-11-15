@@ -22,7 +22,7 @@ Se verifican las cartas por teclado y puntero, menú móvil y Escape, cambio de 
 
 Mesa verde, baraja SVG original y señales coral/ocre. Las cartas de portada son una ilustración interactiva identificada como tal; no representan una partida ni capturas de la aplicación. Las tiendas siguen anunciadas como próximas y Premium conserva su flag en src/lib/publicationFlags.ts.
 
-La analítica opcional se monta al aceptar. Su filtro dinámico bloquea futuros eventos al retirar la aceptación, incluso si una escritura fallida conserva un valor antiguo. Las preferencias del pie permiten cambiar la decisión. Un valor ausente o inválido legible se interpreta como decisión desconocida; una excepción real de almacenamiento permite la elección explícita de esta pestaña. Esto describe esta web y conserva las políticas de la aplicación móvil.
+La analítica opcional se monta al aceptar. Su filtro dinámico bloquea futuros eventos al retirar la aceptación, incluso si una escritura fallida conserva un valor antiguo. Las preferencias del pie permiten cambiar la decisión. Un valor ausente o inválido legible se interpreta como decisión desconocida; ante una excepción real de lectura se usa el último estado observado en esta pestaña. Una lectura previa ausente, inválida o rechazada nunca recupera una aceptación antigua. Esto describe esta web y conserva las políticas de la aplicación móvil.
 
 ## Dependencias y límites
 

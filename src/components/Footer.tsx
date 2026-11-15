@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { CardEmblem } from './CardArt';
+import CookiePreferences from './CookiePreferences';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcherLazy';
@@ -22,13 +23,13 @@ export default async function Footer() {
     const linkBase = 'text-sm !text-muted transition-colors hover:!text-text';
 
     return (
-        <footer className="mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
+        <footer className="tabletop-footer mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
             <div className="mx-auto max-w-[1180px] px-[100px] py-16">
                 <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
 
                     <div className="flex flex-col gap-4">
                         <Link href="/" className="flex items-center gap-3">
-                            <Image src="/logo.png" alt="Cuatro Sotas" width={28} height={28} className="h-7 w-7" />
+                            <CardEmblem />
                             <span className="text-base font-bold text-text">{navT('siteTitle')}</span>
                         </Link>
                         <p className={`${bodyText} max-w-[18ch]`}>{footerT('tagline')}</p>
@@ -86,6 +87,7 @@ export default async function Footer() {
                     </div>
 
                     <div>
+                        <CookiePreferences />
                         <p className={columnHeading}>{footerT('language')}</p>
                         <LanguageSwitcher dropdownDirection="up" />
                     </div>

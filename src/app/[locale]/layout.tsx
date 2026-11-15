@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
-import { Analytics } from '@vercel/analytics/react';
+import ConsentAnalytics from '@/components/ConsentAnalytics';
+import LocaleDocumentLanguage from '@/components/LocaleDocumentLanguage';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -10,7 +11,7 @@ import CookieBanner from '@/components/CookieBanner';
 import { SHOW_PREMIUM_PUBLIC_INFO } from '@/lib/publicationFlags';
 
 export const viewport: Viewport = {
-    themeColor: '#0C1120',
+    themeColor: '#103f37',
     width: 'device-width',
     initialScale: 1,
 };
@@ -133,6 +134,7 @@ export default async function LocaleLayout({
                 }}
             />
             <NextIntlClientProvider locale={locale} messages={messages}>
+                <LocaleDocumentLanguage />
                 <a
                     href="#main-content"
                     className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-lg focus:bg-bg focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
@@ -143,8 +145,8 @@ export default async function LocaleLayout({
                 {children}
                 <Footer />
                 <CookieBanner />
+                <ConsentAnalytics />
             </NextIntlClientProvider>
-            <Analytics />
         </>
     );
 }

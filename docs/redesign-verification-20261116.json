@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-15T23:13:44.641949+00:00",
+  "scope": "Local redesign and verification of the Cuatro Sotas website",
+  "repository": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115",
+  "branch": "codex/cuatro-sotas-tabletop-20261115",
+  "baseCommit": "b01c275d7cbf4eb8c9282fed210231a3c94a4696",
+  "declaredDomain": "https://cuatrosotas.cojauny.com",
+  "tools": {
+    "node": "24.22.3",
+    "next": "16.4.6",
+    "eslintConfigNext": "16.4.6",
+    "nextIntl": "4.15.1",
+    "playwright": "1.65.1",
+    "browser": "Google Chrome157.0.8103.78; headless sandbox enabled; isolated temporary contexts; one worker"
+  },
+  "validation": {
+    "productionBuild": {
+      "exit": 0,
+      "seconds": 4.908,
+      "missingMessageDiagnostics": 0
+    },
+    "browser": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "workers": 1,
+      "secondsReportedByPlaywright": 14.8
+    },
+    "consentUnit": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "usesActualConsentSource": true
+    },
+    "lint": {
+      "exit": 0
+    },
+    "typeCheck": {
+      "exit": 0
+    },
+    "utf8": {
+      "strictDecode": true,
+      "suspiciousSequences": []
+    },
+    "gitDiffCheck": {
+      "exit": 0
+    }
+  },
+  "security": {
+    "productionAudit": {
+      "total": 0
+    },
+    "completeAudit": {
+      "moderate": 7,
+      "high": 0,
+      "critical": 0,
+      "qualification": "Development TypeScript-ESLint/minimatch graph; not waived or reported as a complete audit pass.",
+      "advisory": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+    },
+    "upstreamRelease": "https://github.com/vercel/next.js/releases/tag/v16.4.6",
+    "overridesAdded": false
+  },
+  "beforeAfter": {
+    "baseline": "Next16.2.6 lock:18 audit notices (1critical,8high,8moderate,1low); lint2 set-state-in-effect failures; build exit0 emitted20 missing-message diagnostics for5support keys×4locales.",
+    "consent": "Optional analytics loads after acceptance; dynamic beforeSend consults current permission. Failed writes/removals cannot revive stale accepted storage. Readable missing/invalid values without failed-write override mean unknown.",
+    "language": "Server HTML language remains localized; client locale changes synchronize document.lang for assistive technology.",
+    "routing": "A single src/proxy.ts follows the current framework convention; localePrefix remains as-needed. Local start bound to127.0.0.1 reproduced307 loops; binding and requesting localhost passed the production-server browser suite. No universal diagnosis or hosted-routing verification is claimed.",
+    "encoding": "Reversible UTF8/CP1252 conversions in newly edited fixture/CSS were corrected; final changed text strictly decoded and checked against HEAD."
+  },
+  "preserved": {
+    "locales": [
+      "en",
+      "es",
+      "de",
+      "fr"
+    ],
+    "legalAndSupportRoutes": true,
+    "premiumPublicationFlag": true,
+    "storesComingSoon": true,
+    "appFirebasePrivacyNamespaces": true,
+    "productionVercelConfigurationUntouched": true
+  },
+  "limits": [
+    "Cards are original inline SVG illustrations and a suit explorer, not a playable match or app screenshots.",
+    "Browser telemetry tests intercept the analytics script; they validate loading decisions and current consent gates, not live Vercel delivery.",
+    "No deployed Vercel configuration, live-domain behavior or store publication is certified.",
+    "Seven moderate development advisories remain."
+  ],
+  "logs": [
+    {
+      "gate": "build",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-build-20261116.log",
+      "sha256": "dff2bb8badc3103ade69de620d4802b38bb31713b292719c322b80aadd23c389"
+    },
+    {
+      "gate": "browser",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-final-browser-20261116.log",
+      "sha256": "97df5c16f9bdcd244b7685cb7793e80521df4c540bdb541071ec9e00ddf03f45"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop-first-visit.png",
+      "sha256": "db62f15492689e0852a2f4b30aaeefcbbf36c7340cb2c24253afa2a0d2fbaada",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop.png",
+      "sha256": "cdd546aa939eb25f619afa5d2916c0e7a86f82f0dfcea3117087b86b160150dd",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\full-page.png",
+      "sha256": "c19aa7933ad749a14aa1494a67eb79537e15a7e09f33b8234b8f4b8fa31b012c",
+      "width": 1440,
+      "height": 9443
+    },
+    {
+      "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile-first-visit.png",
+      "sha256": "68a15cd66f82c0b441f2b0f81f63520b4e935a54745f1ef808583540dee3aba1",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile.png",
+      "sha256": "b453fdf705b9786b48e13e65343977c1c5491724a1606a50c9ca6fa83028bd8e",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "sourceSnapshotExcludingThisReceipt": [
+    {
+      "path": ".gitignore",
+      "sha256": "990fd0147988cd1f245c598b77fd1bc915ed1eaf2ff4d9db61f350bcbde8f06d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f6cc208f6f4f3babd1b257a5c087abf6828eb78d9c809eaef30ff712bc749dd3"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "b46ae46a913006707b96a288b75f95fa6cd9f58050d617d872bd4b176294fadd"
+    },
+    {
+      "path": "package.json",
+      "sha256": "dc63e9cc14c83276cf47b9f544e9c806dd9dfb5322aa4d45de3e6a10bc3f238a"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "5123dd792377c6fbd39aef109004e73bc287981e8a610943ea1786d1c84794a8"
+    },
+    {
+      "path": "src/app/[locale]/layout.tsx",
+      "sha256": "3fee6c7d33ed6c632a8d979578cbf11e2eb615c48024c9b2de02ccaaaf9ddc19"
+    },
+    {
+      "path": "src/app/[locale]/page.tsx",
+      "sha256": "973580a8bc036fb317d477ba3b461608148c2a87ef7a667e0fe6b6e02445eee2"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "2086c782cc20a8ce8a9594ebcb3b69af7050538271f12dceca2fca1614caa179"
+    },
+    {
+      "path": "src/components/CardArt.tsx",
+      "sha256": "1c4118115c5128267e5cc6bc8b77855e3aad0a58070ad5235c08b72b812142a7"
+    },
+    {
+      "path": "src/components/ConsentAnalytics.tsx",
+      "sha256": "3f055622cb292ed75e16edf39a359a347c223cb0e8fd2c8ce59628f1b95bd26b"
+    },
+    {
+      "path": "src/components/CookieBanner.tsx",
+      "sha256": "1c1cfc9121787482612cb9cdf25d824af364fd2c53e995c4f936eb260825c88c"
+    },
+    {
+      "path": "src/components/CookiePreferences.tsx",
+      "sha256": "13c93c19151750dd2486fc72e8e31f076c4c055e696f4aef9abeeefa5fba40b4"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "sha256": "4f1a6a60e7dede1e4a87f038dfd13b27ca34aaf0cc1c7d5404370635c1c15795"
+    },
+    {
+      "path": "src/components/GameTable.tsx",
+      "sha256": "219eff2ef071917f7fcdc6960aaf30ebbfd76a4584f7957555003bcccac1f565"
+    },
+    {
+      "path": "src/components/LocaleDocumentLanguage.tsx",
+      "sha256": "efc0817fd2c46748722cd13a1bd5a0bde353e36d1b73886eb1ec24431a5f0487"
+    },
+    {
+      "path": "src/components/Navbar.tsx",
+      "sha256": "a524fea3b4e20a6d3991688dd435bda6fc884613c0a517707ad31d87852e1616"
+    },
+    {
+      "path": "src/hooks/useConsent.ts",
+      "sha256": "cc9abc3a42bfab226f272201f5921603d758d228efa6c1ccb7793eb3d246dde9"
+    },
+    {
+      "path": "src/i18n/messages.ts",
+      "sha256": "85c4bcd8d4568131333c5015ccb646cc6cbea252119323b04b19946f0411697d"
+    },
+    {
+      "path": "src/proxy.ts",
+      "sha256": "09827d8965599c0c7f68888dd899b2adf38c771e3168686c139e19935c00f976"
+    },
+    {
+      "path": "tests/consent.test.mjs",
+      "sha256": "eaace0152b8c4c7c80419066a6a32eeb4ee6605581415e8b707ec583638e51dc"
+    },
+    {
+      "path": "tests/tabletop.spec.ts",
+      "sha256": "9d63f5d0a13e39a5b4592261ff4a7c58d3b47a0ea0e17a657b4adc79f14f10d2"
+    }
+  ],
+  "preview": {
+    "url": "http://localhost:3003",
+    "listenAddress": "::1",
+    "sessionId": 81152,
+    "observedPid": 9564,
+    "mode": "Controlled foreground execution session; no desktop browser opened. Start-Process attempt was rejected by automatic policy, so no detached helper was created.",
+    "qualification": "PID is point-in-time; stop through the owned execution session or revalidate process identity."
+  }
+}

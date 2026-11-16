@@ -1,4 +1,4 @@
-import { CardEmblem } from './CardArt';
+import Image from 'next/image';
 import CookiePreferences from './CookiePreferences';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
@@ -29,7 +29,7 @@ export default async function Footer() {
 
                     <div className="flex flex-col gap-4">
                         <Link href="/" className="flex items-center gap-3">
-                            <CardEmblem />
+                            <Image src="/logo.png" alt="Cuatro Sotas" width={28} height={28} className="h-7 w-7" />
                             <span className="text-base font-bold text-text">{navT('siteTitle')}</span>
                         </Link>
                         <p className={`${bodyText} max-w-[18ch]`}>{footerT('tagline')}</p>

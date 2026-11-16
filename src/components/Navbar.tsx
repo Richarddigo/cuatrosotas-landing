@@ -1,7 +1,7 @@
 'use client';
 
 import { createPortal } from 'react-dom';
-import { CardEmblem } from './CardArt';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
@@ -124,9 +124,16 @@ export default function Navbar() {
                 <nav className="container-studio eco-header-container eco-header-shell flex items-center justify-between" aria-label={t('mainNavAria')}>
                     <div className="flex lg:flex-1">
                         <a href={`/${locale}`} className="group eco-logo-link flex items-center gap-2 sm:gap-3" aria-label={t('brandHomeAria')}>
-                            <CardEmblem />
+                            <Image
+                                src="/logo.png"
+                                alt="Cuatro Sotas"
+                                width={32}
+                                height={32}
+                                loading="eager"
+                                className="h-7 w-7 rounded-md transition-all duration-200 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.55)] min-[900px]:h-8 min-[900px]:w-8"
+                            />
                             <span className="hidden min-[380px]:inline text-base font-bold text-white transition-all duration-200 group-hover:[text-shadow:0_0_10px_rgba(255,255,255,0.55)] min-[900px]:text-lg">
-                                Cuatro Sotas
+                                {t('siteTitle')}
                             </span>
                         </a>
                     </div>

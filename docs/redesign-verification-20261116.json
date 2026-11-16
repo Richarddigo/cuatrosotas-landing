@@ -17,7 +17,7 @@
   "validation": {
     "productionBuild": {
       "exit": 0,
-      "seconds": 4.469,
+      "seconds": 7.242,
       "missingMessageDiagnostics": 0
     },
     "browser": {
@@ -25,7 +25,7 @@
       "failed": 0,
       "skipped": 0,
       "workers": 1,
-      "secondsReportedByPlaywright": 12.9
+      "secondsReportedByPlaywright": 15.7
     },
     "consentUnit": {
       "passed": 7,
@@ -79,7 +79,8 @@
     "premiumPublicationFlag": true,
     "storesComingSoon": true,
     "appFirebasePrivacyNamespaces": true,
-    "productionVercelConfigurationUntouched": true
+    "productionVercelConfigurationUntouched": false,
+    "productionVercelAccountSettingsUntouched": true
   },
   "limits": [
     "Cards are original inline SVG illustrations and a suit explorer, not a playable match or app screenshots.",
@@ -90,58 +91,58 @@
   "logs": [
     {
       "gate": "unit",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-unit-20261116.log",
-      "sha256": "daed879b03cee89bf82a2982669a47d4b03f0367599fb35908f5628b64e07676"
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-brand-restoration-unit-20261116.log",
+      "sha256": "7f4ca45912b6801e04c339c8565e62e68451d7d0a1a078b56f4ce3d9db89f72e"
     },
     {
       "gate": "lint",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-lint-20261116.log",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-brand-restoration-lint-20261116.log",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "gate": "type",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-type-20261116.log",
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-brand-restoration-type-20261116.log",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "gate": "build",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-build-20261116.log",
-      "sha256": "933009588c24b7ae2454cd5700d1990e49d459dc2a6da7828543da29773e43b1"
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-brand-restoration-build-20261116.log",
+      "sha256": "95f98b83e687e56e180ab37926695de081dc469f2981ea5535c69858ac61f835"
     },
     {
       "gate": "browser",
-      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-browser-20261116.log",
-      "sha256": "b644081f8c0312daa107470ab01b6d13b991f190dd5feba1c59d32194df61c96"
+      "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-brand-restoration-browser-20261116.log",
+      "sha256": "06c8d7d3ef3423bb8f70994d6ad98dae8e7808a3586fd601d0d6de9cc067ede1"
     }
   ],
   "screenshots": [
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop-first-visit.png",
-      "sha256": "5a3ce9d58b42eb48468a6251f35790870b9acea9506ee0501e3753641c6d1386",
+      "sha256": "b595aec904ff92442e05ee8afb7b705dabcacb6ee386ca7c24d5cf9756466e43",
       "width": 1440,
       "height": 1000
     },
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop.png",
-      "sha256": "cdd546aa939eb25f619afa5d2916c0e7a86f82f0dfcea3117087b86b160150dd",
+      "sha256": "f7b68e4240512f503f739f307a0948cd8f3754dd798306659af1fd381462d0e4",
       "width": 1440,
       "height": 1000
     },
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\full-page.png",
-      "sha256": "c19aa7933ad749a14aa1494a67eb79537e15a7e09f33b8234b8f4b8fa31b012c",
+      "sha256": "2677864f906c50c14e08dce6b7b27af965985fd9c863d98adffd1e90256e676e",
       "width": 1440,
-      "height": 9443
+      "height": 9450
     },
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile-first-visit.png",
-      "sha256": "af5c2832af13cef49842833c2e581f56aa8e399deb22064aeb04c352c1e94ba9",
+      "sha256": "9f2978e2928e3daf795dba6a951311a21f2ad679c6e14ed56ef47be63985e1b3",
       "width": 390,
       "height": 844
     },
     {
       "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile.png",
-      "sha256": "b453fdf705b9786b48e13e65343977c1c5491724a1606a50c9ca6fa83028bd8e",
+      "sha256": "128a2f647b4035f33ab20bcd2a3de9d4898da6ff141fb752833572162f4f5b98",
       "width": 390,
       "height": 844
     }
@@ -153,7 +154,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "01eca6b9899f04ede7136c31fc0784b0ef664ae744b0d76dd649138c00cbd7d6"
+      "sha256": "ea8afb1a24acf24bd0766dacafb03f956bcd08463b4e47a02fd00e81a5d841bc"
     },
     {
       "path": "package-lock.json",
@@ -169,19 +170,19 @@
     },
     {
       "path": "src/app/[locale]/layout.tsx",
-      "sha256": "3fee6c7d33ed6c632a8d979578cbf11e2eb615c48024c9b2de02ccaaaf9ddc19"
+      "sha256": "4f0a8ff4bf2253d4d29e1310086b50df4a3bf627a5468a8e2c107ddd46dde675"
     },
     {
       "path": "src/app/[locale]/page.tsx",
-      "sha256": "973580a8bc036fb317d477ba3b461608148c2a87ef7a667e0fe6b6e02445eee2"
+      "sha256": "b275b4b9e894ff4cc92d57719e973349e353e8daa40f02cee2f3e344b3949c7d"
     },
     {
       "path": "src/app/globals.css",
-      "sha256": "2086c782cc20a8ce8a9594ebcb3b69af7050538271f12dceca2fca1614caa179"
+      "sha256": "75a4a66bd4a547598ef61ded1827ae200a6eed31bad3926bb54d0f2d5d60ff67"
     },
     {
       "path": "src/components/CardArt.tsx",
-      "sha256": "1c4118115c5128267e5cc6bc8b77855e3aad0a58070ad5235c08b72b812142a7"
+      "sha256": "602be332f482a30b560c5602e5e2606aa0a54a623fce7678497dff768f880482"
     },
     {
       "path": "src/components/ConsentAnalytics.tsx",
@@ -197,7 +198,7 @@
     },
     {
       "path": "src/components/Footer.tsx",
-      "sha256": "4f1a6a60e7dede1e4a87f038dfd13b27ca34aaf0cc1c7d5404370635c1c15795"
+      "sha256": "d6b0f6a223aba2f8df8577e518be7c8bd9f569e42b6f8e098b032f761d1f3664"
     },
     {
       "path": "src/components/GameTable.tsx",
@@ -209,7 +210,7 @@
     },
     {
       "path": "src/components/Navbar.tsx",
-      "sha256": "a524fea3b4e20a6d3991688dd435bda6fc884613c0a517707ad31d87852e1616"
+      "sha256": "81bca5bd7ed191a0fe5b58e81837c319b6fc25d82d84a6d95d1329b3b2b8ac96"
     },
     {
       "path": "src/hooks/useConsent.ts",
@@ -230,17 +231,21 @@
     {
       "path": "tests/tabletop.spec.ts",
       "sha256": "9d63f5d0a13e39a5b4592261ff4a7c58d3b47a0ea0e17a657b4adc79f14f10d2"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "bf9adbb542b904e128c73f81a7ed2b1439cce44385820f2d3ad832c784b9e569"
     }
   ],
   "preview": {
     "url": "http://localhost:3003",
     "listenAddress": "::1",
-    "sessionId": 79769,
+    "sessionId": 85903,
     "mode": "Controlled foreground execution session; no desktop browser opened. Start-Process attempt was rejected by automatic policy, so no detached helper was created.",
-    "qualification": "Current controlled foreground session79769 replaced81152 after the final batch. Stop through the owned session; no browser GUI was opened."
+    "qualification": "Current controlled foreground session85903 replaced79769 after brand restoration. Stop through the owned session; no browser GUI was opened."
   },
-  "updatedAt": "2026-11-15T23:21:14.661847+00:00",
-  "previousValidatedCommit": "34c9fe8e62fa41a798a5afa05d2fbe70e917267e",
+  "updatedAt": "2026-11-16T05:56:06.029409+00:00",
+  "previousValidatedCommit": "fbf16710e2d3a7c0ae92cf0859ba73071abca8fe",
   "earlierValidationBeforeFallbackCorrection": {
     "validation": {
       "productionBuild": {
@@ -314,5 +319,138 @@
       "accepted -> readable rejected -> read exception"
     ],
     "behavior": "A successful read updates tabConsent to the observed accepted/rejected/unknown state. A subsequent read exception cannot restore an older accepted value. failedWriteChoice retains priority."
+  },
+  "earlierValidationBeforeBrandRestoration": {
+    "validation": {
+      "productionBuild": {
+        "exit": 0,
+        "seconds": 4.469,
+        "missingMessageDiagnostics": 0
+      },
+      "browser": {
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "workers": 1,
+        "secondsReportedByPlaywright": 12.9
+      },
+      "consentUnit": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "usesActualConsentSource": true
+      },
+      "lint": {
+        "exit": 0
+      },
+      "typeCheck": {
+        "exit": 0
+      },
+      "utf8": {
+        "strictDecode": true,
+        "suspiciousSequences": []
+      },
+      "gitDiffCheck": {
+        "exit": 0
+      }
+    },
+    "logs": [
+      {
+        "gate": "unit",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-unit-20261116.log",
+        "sha256": "daed879b03cee89bf82a2982669a47d4b03f0367599fb35908f5628b64e07676"
+      },
+      {
+        "gate": "lint",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-lint-20261116.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "gate": "type",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-type-20261116.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "gate": "build",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-build-20261116.log",
+        "sha256": "933009588c24b7ae2454cd5700d1990e49d459dc2a6da7828543da29773e43b1"
+      },
+      {
+        "gate": "browser",
+        "path": "C:\\Users\\richa\\AppData\\Local\\Temp\\cuatro-sotas-redesign-fallback-final-browser-20261116.log",
+        "sha256": "b644081f8c0312daa107470ab01b6d13b991f190dd5feba1c59d32194df61c96"
+      }
+    ],
+    "screenshots": [
+      {
+        "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop-first-visit.png",
+        "sha256": "5a3ce9d58b42eb48468a6251f35790870b9acea9506ee0501e3753641c6d1386",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\desktop.png",
+        "sha256": "cdd546aa939eb25f619afa5d2916c0e7a86f82f0dfcea3117087b86b160150dd",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\full-page.png",
+        "sha256": "c19aa7933ad749a14aa1494a67eb79537e15a7e09f33b8234b8f4b8fa31b012c",
+        "width": 1440,
+        "height": 9443
+      },
+      {
+        "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile-first-visit.png",
+        "sha256": "af5c2832af13cef49842833c2e581f56aa8e399deb22064aeb04c352c1e94ba9",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "path": "C:\\Users\\richa\\Development\\web-vercel\\cojauny-worktrees\\cuatro-sotas-redesign-20261115\\test-results\\tabletop-desktop-and-mobil-63cb1-otion-and-fits-the-viewport\\mobile.png",
+        "sha256": "b453fdf705b9786b48e13e65343977c1c5491724a1606a50c9ca6fa83028bd8e",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "preview": {
+      "url": "http://localhost:3003",
+      "listenAddress": "::1",
+      "sessionId": 79769,
+      "mode": "Controlled foreground execution session; no desktop browser opened. Start-Process attempt was rejected by automatic policy, so no detached helper was created.",
+      "qualification": "Current controlled foreground session79769 replaced81152 after the final batch. Stop through the owned session; no browser GUI was opened."
+    },
+    "qualification": "Historical accepted composition, superseded by the owner instruction to restore original branding. test-results paths are reused; historical PNG bytes are not retained."
+  },
+  "brandRestoration": {
+    "requestedByOwner": true,
+    "referenceCommit": "b01c275d7cbf4eb8c9282fed210231a3c94a4696",
+    "originalStylesheetPrefixExact": true,
+    "originalLogoBytesExact": true,
+    "logoSHA256": "a91866b19d59f28bb3e71bb3b4e63eacb58d7bbe453e3465267759d7c13e87f4",
+    "originalStoreSVGSourceExact": true,
+    "navbarAndFooter": "Original /logo.png Image elements restored; replacement mini-card logo removed.",
+    "iconography": "Original suit emoji and store SVG artwork restored; previously hidden mode/support icons are visible. Card illustrations remain as illustrations.",
+    "mainPalette": {
+      "bg": "#0C1120",
+      "surface": "#1C2336",
+      "surface2": "#2A3550",
+      "accent": "#5B7BFF",
+      "accentDim": "#3A59D9",
+      "gold": "#FFD700",
+      "text": "#F1F5F9",
+      "muted": "#94A3B8"
+    },
+    "primaryButtonContrast": 5.124,
+    "compositionPreserved": true,
+    "nonExecutablePostValidationFormatting": "Removed one extra EOF blank line from the illustration source to satisfy git diff --check; executable code unchanged."
+  },
+  "gitDeploymentBlock": {
+    "file": "vercel.json",
+    "git.deploymentEnabled": false,
+    "allAutomaticGitDeploymentsDisabledByVersionedConfiguration": true,
+    "officialReference": "https://vercel.com/docs/project-configuration/git-configuration#git.deploymentenabled",
+    "deploymentOrRemoteWritePerformed": false,
+    "qualification": "Versioned no-deploy configuration only; no claim about the connected Vercel account was inferred."
   }
 }

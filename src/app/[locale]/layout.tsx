@@ -11,7 +11,7 @@ import CookieBanner from '@/components/CookieBanner';
 import { SHOW_PREMIUM_PUBLIC_INFO } from '@/lib/publicationFlags';
 
 export const viewport: Viewport = {
-    themeColor: '#103f37',
+    themeColor: '#0C1120',
     width: 'device-width',
     initialScale: 1,
 };

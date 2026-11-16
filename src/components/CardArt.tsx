@@ -35,7 +35,3 @@ export function SotaCard({ suit }: { suit: SpanishSuit }) {
         </span>
     );
 }
-
-export function CardEmblem() {
-    return <span className="card-emblem" aria-hidden="true"><SuitMark suit="swords" /><SuitMark suit="cups" /></span>;
-}

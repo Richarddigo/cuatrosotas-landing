@@ -20,7 +20,7 @@ Se verifican las cartas por teclado y puntero, menú móvil y Escape, cambio de 
 
 ## Identidad y comportamiento
 
-Mesa verde, baraja SVG original y señales coral/ocre. Las cartas de portada son una ilustración interactiva identificada como tal; no representan una partida ni capturas de la aplicación. Las tiendas siguen anunciadas como próximas y Premium conserva su flag en src/lib/publicationFlags.ts.
+La composición de mesa y la baraja SVG conservan el logo, los iconos y la paleta principal originales de la versión b01c275: fondo navy #0C1120, acento índigo #5B7BFF y los demás tokens originales. Las cartas de portada son una ilustración interactiva identificada como tal; no representan una partida ni capturas de la aplicación. Las tiendas siguen anunciadas como próximas y Premium conserva su flag en src/lib/publicationFlags.ts.
 
 La analítica opcional se monta al aceptar. Su filtro dinámico bloquea futuros eventos al retirar la aceptación, incluso si una escritura fallida conserva un valor antiguo. Las preferencias del pie permiten cambiar la decisión. Un valor ausente o inválido legible se interpreta como decisión desconocida; ante una excepción real de lectura se usa el último estado observado en esta pestaña. Una lectura previa ausente, inválida o rechazada nunca recupera una aceptación antigua. Esto describe esta web y conserva las políticas de la aplicación móvil.
 
@@ -28,4 +28,4 @@ La analítica opcional se monta al aceptar. Su filtro dinámico bloquea futuros 
 
 Next.js y eslint-config-next: 16.4.6, publicación oficial https://github.com/vercel/next.js/releases/tag/v16.4.6. Auditoría de producción: cero avisos. Auditoría completa: siete avisos moderados en TypeScript-ESLint/minimatch, https://github.com/advisories/GHSA-g3hv-75wg-m249. Sin overrides ni excepciones al análisis.
 
-Informe local: docs/redesign-verification-20261116.json. Las pruebas locales no acreditan despliegue, configuración de Vercel ni publicación en tiendas.
+Informe local: docs/redesign-verification-20261116.json. vercel.json declara git.deploymentEnabled=false para impedir despliegues automáticos desde Git. Las pruebas locales no acreditan un despliegue, la configuración de la cuenta Vercel ni publicación en tiendas.

@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useConsent } from '@/hooks/useConsent';
@@ -8,18 +7,14 @@ import { useConsent } from '@/hooks/useConsent';
 const CookieBanner = () => {
     const t = useTranslations('cookieBanner');
     const { consent, accept, reject } = useConsent();
-    const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        setOpen(consent === 'unknown');
-    }, [consent]);
+    const open = consent === 'unknown';
 
     // We always render the DOM node (position: fixed) and toggle visibility
     // via classes. This way mounting/unmounting after hydration does not
     // trigger a layout shift attributable to the footer.
     return (
         <div
-            className={`fixed bottom-4 left-1/2 z-50 w-[95%] max-w-2xl -translate-x-1/2 rounded-2xl bg-slate-900/95 backdrop-blur-sm p-6 shadow-lg border border-white/10 transition-opacity duration-300 ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            className={`cookie-notice ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             role="dialog"
             aria-live="polite"
             aria-label={t('ariaLabel')}
@@ -29,7 +24,7 @@ const CookieBanner = () => {
             <div className="flex flex-wrap gap-3">
                 <button
                     type="button"
-                    onClick={() => { accept(); setOpen(false); }}
+                    onClick={accept}
                     className="rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                     tabIndex={open ? 0 : -1}
                 >
@@ -37,7 +32,7 @@ const CookieBanner = () => {
                 </button>
                 <button
                     type="button"
-                    onClick={() => { reject(); setOpen(false); }}
+                    onClick={reject}
                     className="rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                     tabIndex={open ? 0 : -1}
                 >

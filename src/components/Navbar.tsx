@@ -35,10 +35,6 @@ export default function Navbar() {
     const menuRef = useRef<HTMLDivElement | null>(null);
 
     const portalEl = useMenuPortal();
-    const [isHydrated, setIsHydrated] = useState(false);
-    useEffect(() => {
-        setIsHydrated(true);
-    }, []);
 
     useMobileMenuA11y(
         {
@@ -124,7 +120,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${headerStateClass}`} role="banner">
+            <header className={`tabletop-header fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${headerStateClass}`} role="banner">
                 <nav className="container-studio eco-header-container eco-header-shell flex items-center justify-between" aria-label={t('mainNavAria')}>
                     <div className="flex lg:flex-1">
                         <a href={`/${locale}`} className="group eco-logo-link flex items-center gap-2 sm:gap-3" aria-label={t('brandHomeAria')}>
@@ -182,17 +178,19 @@ export default function Navbar() {
                 </nav>
             </header>
 
-            {isHydrated && portalEl && createPortal(
+            {mobileOpen && portalEl && createPortal(
                 <div
                     className={`fixed inset-0 z-[9999] flex justify-end transition-all duration-300 ${mobileOpen ? 'visible' : 'invisible pointer-events-none'}`}
                     aria-modal="true"
                     role="dialog"
+                    aria-label={t('mainMenuAria')}
                     aria-hidden={!mobileOpen}
                 >
                     <div
                         className={`flex-1 bg-black/40 backdrop-blur-[2px] transition-opacity duration-300 ${mobileOpen ? 'opacity-100' : 'opacity-0'}`}
                         role="button"
-                        tabIndex={0}
+                        aria-label={t('closeMenu')}
+                        tabIndex={mobileOpen ? 0 : -1}
                         onClick={() => closeMobileMenu('overlay')}
                         onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {

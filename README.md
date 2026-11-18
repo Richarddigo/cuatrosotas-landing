@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cuatro Sotas
 
-## Getting Started
+Web del juego Cuatro Sotas: una variante del Guiñote con baraja española de 40 cartas. Idiomas: español, inglés, alemán y francés. Dominio declarado: https://cuatrosotas.cojauny.com.
 
-First, run the development server:
+## Desarrollo y revisión local
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Validado con Node 24.22.3. Instala con `npm ci --ignore-scripts`, compila con `npm run build` y abre `npm run start -- --hostname localhost --port 3003`. URL: http://localhost:3003.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El hostname de arranque y la URL local deben coincidir. El ensayo con bind 127.0.0.1 produjo un bucle de reescritura del idioma; localhost pasa las pruebas del servidor de producción local.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verificación
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run lint`
+- `npm run type-check`
+- `npm run test:unit`
+- `npm run test:e2e` (Chrome instalado, un worker, perfiles temporales y servidor propio en 3003)
+- `npm audit --omit=dev`
 
-## Learn More
+Se verifican las cartas por teclado y puntero, menú móvil y Escape, cambio de idioma incluido html.lang, rutas legales en cuatro idiomas, FAQ, geometría móvil, movimiento reducido y consentimiento con almacenamiento bloqueado o valores antiguos. Capturas en test-results/.
 
-To learn more about Next.js, take a look at the following resources:
+## Identidad y comportamiento
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La composición de mesa y la baraja SVG conservan el logo, los iconos y la paleta principal originales de la versión b01c275: fondo navy #0C1120, acento índigo #5B7BFF y los demás tokens originales. Las cartas de portada son una ilustración interactiva identificada como tal; no representan una partida ni capturas de la aplicación. Las tiendas siguen anunciadas como próximas y Premium conserva su flag en src/lib/publicationFlags.ts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La analítica opcional se monta al aceptar. Su filtro dinámico bloquea futuros eventos al retirar la aceptación, incluso si una escritura fallida conserva un valor antiguo. Las preferencias del pie permiten cambiar la decisión. Un valor ausente o inválido legible se interpreta como decisión desconocida; ante una excepción real de lectura se usa el último estado observado en esta pestaña. Una lectura previa ausente, inválida o rechazada nunca recupera una aceptación antigua. Esto describe esta web y conserva las políticas de la aplicación móvil.
 
-## Deploy on Vercel
+## Dependencias y límites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next.js y eslint-config-next: 16.4.6, publicación oficial https://github.com/vercel/next.js/releases/tag/v16.4.6. Auditoría de producción: cero avisos. Auditoría completa: siete avisos moderados en TypeScript-ESLint/minimatch, https://github.com/advisories/GHSA-g3hv-75wg-m249. Sin overrides ni excepciones al análisis.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Informe local: docs/redesign-verification-20261116.json. vercel.json declara git.deploymentEnabled=false para impedir despliegues automáticos desde Git. Las pruebas locales no acreditan un despliegue, la configuración de la cuenta Vercel ni publicación en tiendas.

@@ -95,6 +95,111 @@ const footerTranslations = {
     language: { es: 'Idioma', en: 'Language', de: 'Sprache', fr: 'Langue' }
 } as const satisfies Record<string, LocalizedValue>;
 
+const tabletopTranslations = {
+    "eyebrow": {
+        "es": "Baraja española. Tu próxima jugada.",
+        "en": "A Spanish deck. Your next move.",
+        "de": "Spanische Karten. Dein nächster Zug.",
+        "fr": "Un jeu espagnol. À toi de jouer."
+    },
+    "discover": {
+        "es": "Descubre la jugada",
+        "en": "Discover the twist",
+        "de": "Entdecke den Spielzug",
+        "fr": "Découvre la règle"
+    },
+    "rules": {
+        "es": "Aprende las reglas",
+        "en": "Learn the rules",
+        "de": "Lerne die Regeln",
+        "fr": "Apprends les règles"
+    },
+    "chooseSuit": {
+        "es": "Toca una sota. Conoce su palo.",
+        "en": "Pick a Jack. Meet its suit.",
+        "de": "Wähle einen Buben. Entdecke die Farbe.",
+        "fr": "Choisis un valet. Découvre sa couleur."
+    },
+    "coins": {
+        "es": "Oros",
+        "en": "Coins",
+        "de": "Münzen",
+        "fr": "Pièces"
+    },
+    "cups": {
+        "es": "Copas",
+        "en": "Cups",
+        "de": "Kelche",
+        "fr": "Coupes"
+    },
+    "swords": {
+        "es": "Espadas",
+        "en": "Swords",
+        "de": "Schwerter",
+        "fr": "Épées"
+    },
+    "clubs": {
+        "es": "Bastos",
+        "en": "Clubs",
+        "de": "Stäbe",
+        "fr": "Bâtons"
+    },
+    "zeroPoints": {
+        "es": "Una sota. Cero puntos.",
+        "en": "One Jack. Zero points.",
+        "de": "Ein Bube. Null Punkte.",
+        "fr": "Un valet. Zéro point."
+    },
+    "illustration": {
+        "es": "Baraja ilustrada · no es una partida jugable",
+        "en": "Illustrated deck · not a playable match",
+        "de": "Illustriertes Deck · keine spielbare Partie",
+        "fr": "Jeu illustré · pas une partie jouable"
+    },
+    "tableLabel": {
+        "es": "Explora las cuatro sotas de la baraja española",
+        "en": "Explore the four Jacks of the Spanish deck",
+        "de": "Entdecke die vier Buben des spanischen Kartenspiels",
+        "fr": "Explore les quatre valets du jeu espagnol"
+    },
+    "handNote": {
+        "es": "No necesitas la mano más grande. Necesitas las cuatro cartas correctas.",
+        "en": "You don’t need the biggest hand. Just the right four cards.",
+        "de": "Du brauchst nicht die größte Hand. Nur die vier richtigen Karten.",
+        "fr": "Pas besoin de la plus grande main. Juste des quatre bonnes cartes."
+    },
+    "deck40": {
+        "es": "40 cartas",
+        "en": "40 cards",
+        "de": "40 Karten",
+        "fr": "40 cartes"
+    },
+    "onlyFour": {
+        "es": "4 palos",
+        "en": "4 suits",
+        "de": "4 Farben",
+        "fr": "4 couleurs"
+    },
+    "pointsZero": {
+        "es": "0 puntos por sota",
+        "en": "0 points per Jack",
+        "de": "0 Punkte pro Bube",
+        "fr": "0 point par valet"
+    },
+    "chapterOne": {
+        "es": "La jugada que lo cambia todo",
+        "en": "The hand that changes everything",
+        "de": "Die Hand, die alles verändert",
+        "fr": "La main qui change tout"
+    },
+    "cookiePreferences": {
+        "es": "Preferencias de cookies",
+        "en": "Cookie preferences",
+        "de": "Cookie-Einstellungen",
+        "fr": "Préférences des cookies"
+    }
+} as const satisfies Record<string, LocalizedValue>;
+
 const homeTranslations = {
     tagline: {
         es: 'El Guiñote más emocionante que jamás has jugado',
@@ -397,6 +502,37 @@ const homeTranslations = {
 } as const satisfies Record<string, LocalizedValue>;
 
 const supportTranslations = {
+"legalDocsTitle": {
+        "es": "Documentos legales",
+        "en": "Legal documents",
+        "de": "Rechtliche Dokumente",
+        "fr": "Documents juridiques"
+    },
+    "privacyTitle": {
+        "es": "Privacidad",
+        "en": "Privacy",
+        "de": "Datenschutz",
+        "fr": "Confidentialité"
+    },
+    "privacyDesc": {
+        "es": "Cómo tratamos tus datos.",
+        "en": "How we handle your data.",
+        "de": "Wie wir deine Daten verarbeiten.",
+        "fr": "Comment nous traitons tes données."
+    },
+    "cookiesTitle": {
+        "es": "Cookies",
+        "en": "Cookies",
+        "de": "Cookies",
+        "fr": "Cookies"
+    },
+    "cookiesDesc": {
+        "es": "Información sobre cookies y tus preferencias.",
+        "en": "Information about cookies and your preferences.",
+        "de": "Informationen zu Cookies und deinen Einstellungen.",
+        "fr": "Informations sur les cookies et tes préférences."
+    },
+
     contactTitle: { es: 'Canales de contacto', en: 'Contact Channels', de: 'Kontaktkanäle', fr: 'Canaux de contact' },
     contactDesc: {
         es: 'Estamos aquí para ayudarte. Escríbenos al canal que corresponda a tu consulta.',
@@ -482,11 +618,11 @@ const notFoundTranslations = {
 
 const cookieBannerTranslations = {
     message: {
-        es: 'Usamos cookies esenciales y de analítica para mejorar la experiencia en Cuatro Sotas. Puedes aceptarlas o seguir solo con las esenciales.',
-        en: 'We use essential and optional analytics cookies to improve your experience in Cuatro Sotas. You can accept them or continue with essentials only.',
-        de: 'Wir verwenden essenzielle und optionale Analyse-Cookies für Cuatro Sotas. Sie können diese akzeptieren oder nur mit den essenziellen fortfahren.',
-        fr: "Nous utilisons des cookies essentiels et d'analyse pour améliorer votre expérience sur Cuatro Sotas. Vous pouvez les accepter ou continuer avec les essentiels."
-    },
+        "es": "Usamos cookies esenciales para el sitio. La analítica opcional de Vercel se activa solo si aceptas. Puedes cambiar tu elección en el pie de página.",
+        "en": "We use essential site cookies. Optional Vercel analytics starts only if you accept. You can change your choice in the footer.",
+        "de": "Wir verwenden notwendige Website-Cookies. Optionale Vercel-Analyse startet nur nach Ihrer Zustimmung. Sie können Ihre Auswahl in der Fußzeile ändern.",
+        "fr": "Nous utilisons des cookies essentiels au site. L’analyse facultative Vercel démarre seulement si vous acceptez. Vous pouvez modifier votre choix en bas de page."
+},
     acceptAll: { es: 'Aceptar todas', en: 'Accept all', de: 'Alle akzeptieren', fr: 'Tout accepter' },
     reject: { es: 'Solo necesarias', en: 'Essentials only', de: 'Nur notwendige', fr: 'Nécessaires seulement' },
     moreInfo: { es: 'Política de cookies', en: 'Cookie Policy', de: 'Cookie-Richtlinie', fr: 'Politique de cookies' },
@@ -521,11 +657,11 @@ const cookiesPageTranslations = {
     },
     s2AnalyticsTitle: { es: 'Cookies de analítica', en: 'Analytics', de: 'Analyse', fr: 'Analyse' },
     s2AnalyticsDesc: {
-        es: 'Usamos <strong>Vercel Analytics</strong> con un enfoque sin cookies que deriva información agregada sin almacenar identificadores personales. No requiere consentimiento.',
-        en: 'We use <strong>Vercel Analytics</strong> with a cookieless approach that derives aggregated insights without storing personal identifiers. No consent is required.',
-        de: 'Wir nutzen <strong>Vercel Analytics</strong> ohne Cookies, das aggregierte Erkenntnisse ohne persönliche Identifikatoren gewinnt. Kein Einverständnis erforderlich.',
-        fr: 'Nous utilisons <strong>Vercel Analytics</strong> sans cookies, qui dérive des informations agrégées sans stocker d\'identifiants personnels. Aucun consentement n\'est requis.'
-    },
+        "es": "La analítica opcional de <strong>Vercel</strong> no utiliza cookies y se activa en esta web solo al aceptar. Puedes cambiar tu elección en las preferencias del pie de página. Retirar la aceptación detiene los futuros envíos de eventos analíticos.",
+        "en": "Optional <strong>Vercel</strong> analytics is cookieless and starts on this website only after you accept. You can change your choice in the footer preferences. Withdrawing acceptance stops future analytics event submissions.",
+        "de": "Die optionale <strong>Vercel</strong>-Analyse verwendet keine Cookies und startet auf dieser Website erst nach Ihrer Zustimmung. Sie können Ihre Auswahl über die Einstellungen in der Fußzeile ändern. Ein Widerruf stoppt die zukünftige Übermittlung von Analyseereignissen.",
+        "fr": "L’analyse facultative <strong>Vercel</strong> n’utilise pas de cookies et démarre sur ce site seulement après votre acceptation. Vous pouvez modifier votre choix dans les préférences du pied de page. Le retrait de votre acceptation arrête les futurs envois d’événements analytiques."
+},
     s2AdsTitle: { es: 'Identificadores de publicidad (solo en la app)', en: 'Advertising identifiers (app only)', de: 'Werbe-IDs (nur in der App)', fr: 'Identifiants publicitaires (application uniquement)' },
     s2AdsDesc: {
         es: 'En la aplicación móvil, con tu consentimiento, podemos usar identificadores de publicidad del dispositivo para personalizar anuncios. Puedes gestionar este acceso desde los ajustes de tu dispositivo.',
@@ -1137,6 +1273,7 @@ export interface CuatroSotasMessages {
     nav: Namespace<typeof navTranslations>;
     footer: Namespace<typeof footerTranslations>;
     home: Namespace<typeof homeTranslations>;
+    tabletop: Namespace<typeof tabletopTranslations>;
     support: Namespace<typeof supportTranslations>;
     supportContent: Namespace<typeof supportContentTranslations>;
     legalCommon: Namespace<typeof legalCommonTranslations>;
@@ -1161,6 +1298,7 @@ export function getLocaleMessages(locale: string): CuatroSotasMessages {
         nav: toNamespace(navTranslations, currentLocale),
         footer: toNamespace(footerTranslations, currentLocale),
         home: toNamespace(homeTranslations, currentLocale),
+        tabletop: toNamespace(tabletopTranslations, currentLocale),
         support: toNamespace(supportTranslations, currentLocale),
         supportContent: toNamespace(supportContentTranslations, currentLocale),
         legalCommon: toNamespace(legalCommonTranslations, currentLocale),

@@ -1,4 +1,4 @@
-﻿/* =====================================================================
+/* =====================================================================
    Cuatro Sotas — Shared Stylesheet
    Mobile-first. Breakpoints: 480px / 768px / 1024px
    Fonts: Inter (all weights) — Aligned with Cojauny Studio
@@ -2134,4 +2134,196 @@ footer>div {
 .section {
   content-visibility: auto;
   contain-intrinsic-size: 1px 800px;
+}
+
+/* Cuatro Sotas: a playing table, original Spanish cards and a rulebook. */
+:root { --paper:#f8efdc; --ink:var(--bg); --max-width:1120px; }
+body { background:var(--ink); }
+.tabletop-header { background:rgba(12,17,32,.96) !important; border-bottom:0; box-shadow:none !important; backdrop-filter:none !important; }
+.tabletop-header::after { content:""; position:absolute; inset-inline:0; bottom:0; height:1px; background:var(--border-light); pointer-events:none; }
+.tabletop-header nav { max-width:1320px; }
+.tabletop-header .eco-logo-link { text-transform:uppercase; letter-spacing:.035em; }
+.tabletop-header .eco-logo-link span { text-shadow:none !important; }
+.tabletop-header .eco-nav-link { border-radius:2px; text-shadow:none; font-size:12px; letter-spacing:.04em; }
+.tabletop-hero { max-width:1320px; margin:auto; padding:34px 48px 0; }
+.hero-topline { display:flex; justify-content:space-between; gap:20px; font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); padding-bottom:24px; border-bottom:1px solid var(--border-light); }
+.hero-topline span:last-child { font-family:monospace; }
+.hero-composition { display:grid; grid-template-columns:1fr 1.1fr; align-items:center; gap:0; min-height:610px; padding-block:30px; }
+.hero-copy { position:relative; z-index:2; padding-right:25px; }
+.hero-copy h1 { font-family:'Arial Black','Arial',sans-serif; font-weight:950; font-size:clamp(78px,8.5vw,123px); line-height:.87; text-transform:uppercase; letter-spacing:-.08em; margin:0 0 25px -5px; color:var(--text); }
+.hero-copy h1>span { display:block; }
+.hero-copy h1 i { font-style:normal; color:var(--accent); }
+.hero-copy .hero-promise { font-family:Georgia,serif; font-weight:400; font-size:clamp(21px,2vw,29px); max-width:410px; line-height:1.25; margin:0 0 16px; color:var(--text); }
+.hero-copy .hero-description { color:var(--text-muted); max-width:430px; font-size:13px; line-height:1.8; }
+.tabletop-actions { display:flex; align-items:center; flex-wrap:wrap; gap:24px; margin-top:27px; }
+.tabletop-button { display:inline-flex; justify-content:space-between; align-items:center; gap:24px; min-height:50px; padding:13px 20px; background:var(--accent); color:var(--ink); font-size:12px; font-weight:800; text-decoration:none; border:1px solid var(--accent); border-radius:3px; }
+.tabletop-button:hover { color:var(--ink); background:var(--paper); border-color:var(--text); }
+.tabletop-button span { font-size:20px; line-height:1; }
+.tabletop-text-link { color:var(--text); font-size:11px; font-weight:600; text-decoration:underline; text-underline-offset:6px; }
+.tabletop-text-link span { margin-left:9px; }
+.store-status { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:27px; font-size:9px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); }
+.store-status>span { display:inline-flex; align-items:center; gap:6px; }
+.store-status svg { width:17px; height:17px; flex-shrink:0; }
+.table-facts { display:flex; justify-content:space-between; border-top:1px solid var(--border-light); padding:20px 0; font-size:10px; font-family:monospace; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); }
+.game-table { position:relative; height:540px; min-width:0; isolation:isolate; }
+.game-table::before { content:''; position:absolute; inset:20px 10px 110px; border:1px solid rgba(241,245,249,.22); border-radius:48%; }
+.game-table::after { content:''; position:absolute; inset:34px 24px 124px; border:1px solid var(--border); border-radius:48%; pointer-events:none; }
+.table-north { position:absolute; left:50%; top:38px; transform:translateX(-50%); font-size:11px; font-family:monospace; letter-spacing:.4em; color:var(--text-muted); }
+.table-west,.table-east { position:absolute; top:195px; color:var(--text-muted); font-size:9px; letter-spacing:.2em; writing-mode:vertical-rl; }
+.table-west { left:24px; transform:rotate(180deg); }
+.table-east { right:24px; }
+.table-hand { position:absolute; inset:95px 45px auto; height:280px; display:flex; align-items:center; justify-content:center; }
+.table-card-button { position:relative; width:31%; max-width:151px; aspect-ratio: .62; min-width:0; margin:0 -13px; padding:0; border:0; border-radius:5px; background:transparent; transform-origin:50% 130%; transition:transform 240ms ease; cursor:pointer; filter:drop-shadow(0 10px 10px rgba(0,0,0,.3)); }
+.table-card-button:nth-child(1) { transform:rotate(-18deg) translateY(10px); z-index:1; }
+.table-card-button:nth-child(2) { transform:rotate(-6deg) translateY(-8px); z-index:2; }
+.table-card-button:nth-child(3) { transform:rotate(7deg) translateY(-5px); z-index:3; }
+.table-card-button:nth-child(4) { transform:rotate(20deg) translateY(12px); z-index:4; }
+.table-card-button.is-selected,.table-card-button:hover { transform:rotate(0) translateY(-30px); z-index:5; }
+.table-card-button:focus-visible { outline:3px solid var(--gold); outline-offset:6px; }
+.sota-card { display:block; position:relative; width:100%; height:100%; background:var(--paper); color:var(--suit-color); border:5px solid var(--paper); border-radius:5px; box-shadow:inset 0 0 0 1px rgba(12,17,32,.22); overflow:hidden; }
+.sota-coins { --suit-color:#aa6924; }
+.sota-cups { --suit-color:#b54e3c; }
+.sota-swords { --suit-color:#345c81; }
+.sota-clubs { --suit-color:#2c6951; }
+.card-corner { position:absolute; left:5px; top:4px; display:flex; flex-direction:column; align-items:center; gap:2px; }
+.card-corner b { font-family:Georgia,serif; font-size:20px; line-height:1; }
+.card-corner svg { width:17px; height:17px; }
+.card-corner-bottom { top:auto; left:auto; right:5px; bottom:4px; transform:rotate(180deg); }
+.sota-figure { position:absolute; width:76%; height:85%; left:12%; top:8%; }
+.card-medallion { position:absolute; left:39%; top:54%; width:22%; }
+.card-medallion svg { width:100%; height:auto; }
+.table-south { position:absolute; bottom:14px; left:10px; right:10px; text-align:center; }
+.table-caption { display:block; font-size:10px; color:var(--text-muted); }
+.suit-description { display:flex; justify-content:center; align-items:center; gap:12px; margin:10px 0 5px; }
+.suit-description strong { color:var(--text); font-size:20px; font-family:Georgia,serif; font-weight:400; }
+.suit-description span { color:var(--gold); font-size:10px; border-left:1px solid var(--border-light); padding-left:12px; }
+.table-disclaimer { display:block; color:var(--text-muted); font-size:9px; }
+.hand-note { padding:35px max(32px,calc((100vw - 1120px)/2)); display:flex; align-items:center; justify-content:space-between; gap:30px; border-block:1px solid var(--border-light); background:var(--bg-light); }
+.hand-note p { max-width:800px; margin:0; color:var(--text); font-family:Georgia,serif; font-size:clamp(22px,3vw,36px); line-height:1.35; }
+.hand-note .hand-note-icon { font-size:44px; line-height:1; flex-shrink:0; }
+.tabletop-page .section { padding:80px 32px; border-bottom:1px solid var(--border); }
+.tabletop-page .container { max-width:1120px; }
+.tabletop-page .section-title { text-align:left; font-family:Georgia,serif; font-weight:400; font-size:clamp(29px,4vw,46px); letter-spacing:-.035em; margin-bottom:34px; line-height:1.15; }
+.tabletop-page .section-title::after { display:none; }
+.chapter-label { display:block; font-size:10px; font-family:monospace; letter-spacing:.18em; margin-bottom:16px; color:var(--gold); }
+.mechanic-section .highlight-box { max-width:780px; background:none; border:0; padding:0; border-radius:0; font-size:16px; line-height:1.9; }
+.mechanic-section .highlight-box p { font-size:16px; }
+.mechanic-section .instant-win { background:var(--surface); color:var(--text); border:0; border-left:6px solid var(--accent); border-radius:2px; padding:24px; margin:32px 0; max-width:800px; }
+.mechanic-section .instant-win strong,.mechanic-section .instant-win p { color:var(--text); }
+.tabletop-page .suits-grid { display:flex; flex-wrap:wrap; gap:0; margin-top:24px; max-width:800px; border-block:1px solid var(--border-light); }
+.tabletop-page .suit-card { flex:1; display:flex; flex-direction:row; justify-content:center; align-items:center; padding:18px 10px; background:none; border:0; border-right:1px solid var(--border-light); border-radius:0; gap:10px; }
+.tabletop-page .suit-card:last-child { border:0; }
+.tabletop-page .suit-icon { width:30px; height:30px; display:inline-block; font-size:24px; line-height:1; margin:0; }
+.tabletop-page .suit-name { font-size:12px; color:var(--text); }
+.tabletop-page .modes-grid { display:flex; flex-direction:column; gap:0; counter-reset:mode; }
+.tabletop-page .mode-card { display:flex; gap:22px; align-items:baseline; padding:25px 0; border:0; border-top:1px solid var(--border-light); background:transparent; border-radius:0; box-shadow:none; }
+.tabletop-page .mode-card::before { counter-increment:mode; content:'0' counter(mode); font-family:monospace; color:var(--gold); font-size:14px; }
+.tabletop-page .mode-card:hover { transform:none; }
+.tabletop-page .mode-icon { display:inline-block; flex-shrink:0; font-size:24px; }
+.tabletop-page .mode-card h3 { font-size:21px; color:var(--text); font-family:Georgia,serif; }
+.tabletop-page .mode-card p { max-width:740px; margin:0; color:var(--text-muted); font-size:14px; }
+.tabletop-page .bg-light { background:var(--bg-light); }
+.tabletop-page .bg-green { background:var(--green); }
+.tabletop-page .table-scroll { max-width:900px; border:1px solid var(--border-light); border-radius:2px; }
+.tabletop-page table { background:var(--bg-light); border-radius:0; }
+.tabletop-page th { background:var(--bg); color:var(--gold); text-transform:uppercase; letter-spacing:.08em; font-size:11px; }
+.tabletop-page td { border-bottom:1px solid var(--border); padding:13px 20px; font-size:13px; }
+.tabletop-page .val-zero { color:var(--gold); }
+.tabletop-page .val-high { color:var(--red); }
+.tabletop-page .turn-steps { max-width:950px; }
+.tabletop-page .turn-step { background:transparent; border:0; border-bottom:1px solid var(--border-light); border-radius:0; padding:25px 0; }
+.tabletop-page .turn-step:hover { transform:none; border-color:var(--border-light); }
+.tabletop-page .turn-step-num { background:var(--accent); color:var(--ink); border-radius:3px; box-shadow:none; }
+.tabletop-page .turn-step:nth-child(3) .turn-step-num { background:var(--gold); color:var(--ink); }
+.tabletop-page .ai-cards { gap:1px; background:var(--border-light); border:1px solid var(--border-light); border-radius:2px; }
+.tabletop-page .ai-card { border:0; background:var(--bg); border-radius:0; padding:28px; }
+.tabletop-page .ai-card:hover { transform:none; }
+.tabletop-page .achievement-grid { gap:1px; background:var(--border-light); border:1px solid var(--border-light); border-radius:2px; }
+.tabletop-page .achievement-card { border:0; background:var(--bg-light); border-radius:0; box-shadow:none; padding:28px; }
+.tabletop-page .achievement-card:hover { transform:none; }
+.tabletop-page .links-grid { gap:0; }
+.tabletop-page .link-card { border:0; background:transparent; border-top:1px solid var(--border-light); border-radius:0; padding:26px 26px 26px 0; box-shadow:none; }
+.tabletop-page .link-card:hover { transform:none; }
+.tabletop-page .link-card .icon { display:inline-block; font-size:24px; }
+.tabletop-page .link-card h3 { color:var(--gold); }
+.tabletop-page .faq-list { max-width:900px; }
+.tabletop-page .faq-item { border:0; border-top:1px solid var(--border-light); border-radius:0; background:none; }
+.tabletop-page .faq-question { border-radius:0; padding:23px 0; color:var(--text); text-align:left; font-size:15px; }
+.tabletop-page .faq-question:hover { background:none; color:var(--gold); }
+.tabletop-page .faq-answer { padding:0 25px 24px 0; }
+.tabletop-footer { background:var(--bg); }
+.tabletop-footer>div { padding:55px clamp(24px,5vw,60px); max-width:1240px; }
+.tabletop-footer a[href^="https"] { background:transparent; border:1px solid var(--border-light); border-radius:2px; box-shadow:none; }
+.tabletop-footer a[href^="https"]:hover { transform:none; box-shadow:none; }
+.cookie-preferences { color:var(--gold); display:block; margin-bottom:22px; font-size:12px; text-decoration:underline; text-underline-offset:4px; cursor:pointer; text-align:left; }
+.cookie-notice { position:fixed; z-index:60; bottom:18px; left:18px; width:min(440px,calc(100vw - 36px)); background:var(--bg); border:1px solid var(--text-muted); border-radius:3px; padding:22px; box-shadow:0 8px 40px rgba(0,0,0,.4); transition:opacity 150ms; }
+.cookie-notice button { border-radius:2px; min-height:44px; }
+.cookie-notice button:first-child { background:var(--accent); color:var(--bg); }
+.cookie-notice a { margin-left:0; }
+.cookie-notice p { font-size:12px; color:var(--text); }
+:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
+#the-play,#rules { scroll-margin-top:100px; }
+@media (max-width:1023px) {
+  .tabletop-hero { padding-inline:28px; }
+  .hero-composition { grid-template-columns:1fr 1fr; min-height:570px; }
+  .hero-copy h1 { font-size:82px; }
+  .hero-copy .hero-promise { font-size:22px; }
+  .game-table { height:460px; }
+  .table-hand { inset:95px 25px auto; height:220px; }
+  .table-card-button { margin-inline:-12px; }
+  .table-west { left:0; }.table-east { right:0; }
+  .tabletop-actions { gap:16px; }
+}
+@media (max-width:700px) {
+  .hero-topline span:last-child { display:none; }
+  .hero-topline { padding-bottom:18px; font-size:9px; }
+  .tabletop-hero { padding:24px 22px 0; }
+  .hero-composition { display:flex; flex-direction:column; padding:28px 0 0; align-items:stretch; }
+  .hero-copy { padding:0; }
+  .hero-copy h1 { font-size:clamp(80px,19.5vw,122px); letter-spacing:-.075em; margin-bottom:20px; }
+  .hero-copy .hero-promise { font-size:25px; max-width:350px; }
+  .hero-copy .hero-description { font-size:12px; max-width:440px; }
+  .tabletop-actions { margin-top:23px; gap:20px; }
+  .tabletop-button { min-height:48px; font-size:11px; padding-inline:16px; gap:16px; }
+  .store-status { margin-top:20px; font-size:8px; }
+  .game-table { height:420px; margin-top:20px; }
+  .game-table::before { inset:10px 0 105px; }
+  .game-table::after { inset:22px 12px 117px; }
+  .table-hand { inset:65px 27px auto; height:235px; }
+  .table-north { top:25px; font-size:9px; }
+  .table-west,.table-east { top:160px; font-size:7px; }
+  .table-west { left:5px; }.table-east { right:5px; }
+  .table-card-button { margin-inline:-10px; max-width:128px; }
+  .table-south { bottom:10px; }
+  .table-facts { padding:18px 0; font-size:8px; gap:12px; letter-spacing:0; }
+  .hand-note { padding:28px 24px; gap:18px; }
+  .hand-note .hand-note-icon { font-size:32px; }
+  .tabletop-page .section { padding:52px 24px; }
+  .tabletop-page .section-title { font-size:32px; }
+  .tabletop-page .suits-grid { display:grid; grid-template-columns:1fr 1fr; }
+  .tabletop-page .suit-card:nth-child(2) { border-right:0; }
+  .tabletop-page .suit-card:nth-child(-n+2) { border-bottom:1px solid var(--border-light); }
+  .tabletop-page .mode-card { gap:16px; }
+  .tabletop-page .mode-card h3 { font-size:20px; }
+  .tabletop-page .mode-card p { font-size:13px; }
+  .tabletop-page td { padding:12px; font-size:11px; }
+  .tabletop-page .link-card { padding-block:22px; }
+  .tabletop-page .ai-card,.tabletop-page .achievement-card { padding:22px; }
+  .cookie-notice { bottom:12px; left:12px; width:calc(100vw - 24px); padding:18px; }
+}
+@media (max-width:360px) {
+  .tabletop-actions { gap:14px; }
+  .tabletop-button { gap:9px; padding-inline:12px; font-size:10px; }
+  .tabletop-text-link { font-size:10px; }
+  .table-hand { inset-inline:22px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto !important; }
+  *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+@media (max-width:700px) {
+  .table-card-button { width:28%; margin-inline:-9px; max-width:112px; }
+  .table-card-button:nth-child(4) { transform:rotate(15deg) translateY(12px); }
+  .table-card-button.is-selected,.table-card-button:hover { transform:rotate(0) translateY(-30px); }
 }

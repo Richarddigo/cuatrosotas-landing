@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import CookiePreferences from './CookiePreferences';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcherLazy';
@@ -22,7 +23,7 @@ export default async function Footer() {
     const linkBase = 'text-sm !text-muted transition-colors hover:!text-text';
 
     return (
-        <footer className="mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
+        <footer className="tabletop-footer mt-auto border-t border-[rgba(255,255,255,0.06)] bg-bg">
             <div className="mx-auto max-w-[1180px] px-[100px] py-16">
                 <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
 
@@ -86,6 +87,7 @@ export default async function Footer() {
                     </div>
 
                     <div>
+                        <CookiePreferences />
                         <p className={columnHeading}>{footerT('language')}</p>
                         <LanguageSwitcher dropdownDirection="up" />
                     </div>
